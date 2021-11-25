@@ -9,5 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CubeScene.unity
     guid: 876dcd5c878af564198fde76a45dff79
   m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: cd99671f2fc74db46bbb88f711ad060f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f9c25a918654bf8439c259000d431656, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 723d24b8c63d4904286ed2a5de003697, type: 2}
