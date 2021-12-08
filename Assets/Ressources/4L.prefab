@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   minWidth: 0
-  maxWidth: 0
+  maxWidth: 12.5
 --- !u!114 &6512966105240831622
 MonoBehaviour:
   m_ObjectHideFlags: 0
