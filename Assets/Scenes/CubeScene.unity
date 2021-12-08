@@ -636,7 +636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObject: {fileID: 626417325}
-  camera: {fileID: 794230589}
 --- !u!1 &237138490
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,10 +947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a180b9e87bdd1fb4faf0138a0f3970a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 626417325}
   selected: 0
   minWidth: 0
-  maxWidth: 0
+  maxWidth: 12.5
 --- !u!114 &626417338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,7 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 1.29
+  outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -1014,6 +1012,7 @@ GameObject:
   - component: {fileID: 794230594}
   - component: {fileID: 794230593}
   - component: {fileID: 794230592}
+  - component: {fileID: 794230591}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1035,6 +1034,29 @@ Transform:
   m_Father: {fileID: 790199930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794230591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794230589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf98dd1206224111a38765365e98e207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockCursorWhenFocusLocked: 1
+  setCursorInvisibleWhenFocusLocked: 0
+  maxGazeCollisionDistance: 10
+  raycastLayerMasks:
+  - serializedVersion: 2
+    m_Bits: 4294967291
+  stabilizer:
+    storedStabilitySamples: 60
+  gazeTransform: {fileID: 0}
+  minHeadVelocityThreshold: 0.5
+  maxHeadVelocityThreshold: 2
 --- !u!114 &794230592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,7 +1512,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObject: {fileID: 7743910938946067089, guid: 190b4074a213c13459b270fce9f07dc5, type: 3}
-  camera: {fileID: 794230589}
 --- !u!1 &1993204721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,10 +1839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a180b9e87bdd1fb4faf0138a0f3970a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 3030129504919690264}
   selected: 0
   minWidth: 0
-  maxWidth: 0
+  maxWidth: 12.5
 --- !u!65 &3030129504919690271
 BoxCollider:
   m_ObjectHideFlags: 0
