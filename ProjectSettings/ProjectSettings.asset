@@ -40,9 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 784ba5684bfe5704b873aa48b6a1e48b, type: 3}
+  - logo: {fileID: 21300000, guid: 0be39b01188150d4498b46b3ab7888af, type: 3}
     duration: 2
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 784ba5684bfe5704b873aa48b6a1e48b, type: 3}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 0be39b01188150d4498b46b3ab7888af, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -273,7 +273,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 12de6e5e779836c4a8cf9e29b6759e63, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
@@ -625,11 +632,33 @@ PlayerSettings:
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 802f09f222dfd801
   metroApplicationDescription: Template_3D
-  wsaImages: {}
+  wsaImages:
+    65636: Assets/Splash_Icons/geololens_logo_50.png
+    65661: Assets/Splash_Icons/geololens_logo_63.png
+    65686: Assets/Splash_Icons/geololens_logo_75.png
+    65736: Assets/Splash_Icons/geololens_logo_100.png
+    65936: Assets/Splash_Icons/geololens_logo_200.png
+    131272: Assets/Splash_Icons/Geololens_200scale.png
+    2031640: Assets/Splash_Icons/geololens_logo_24.png
+    2031716: Assets/Splash_Icons/geololens_logo_44.png
+    2031816: Assets/Splash_Icons/geololens_logo_88.png
+    2031872: Assets/Splash_Icons/geololens_logo_256.png
+    2097252: Assets/Splash_Icons/geololens_logo_71.png
+    2097352: Assets/Splash_Icons/geololens_logo_142.png
+    2097552: Assets/Splash_Icons/geololens_logo_284.png
+    2162788: Assets/Splash_Icons/geololens_logo_150.png
+    2162888: Assets/Splash_Icons/geololens_logo_300.png
+    2163088: Assets/Splash_Icons/geololens_logo_600.png
+    2228324: Assets/Splash_Icons/geololens_logo_310.png
+    2228349: Assets/Splash_Icons/geololens_logo_388.png
+    2228374: Assets/Splash_Icons/geololens_logo_465.png
+    2228424: Assets/Splash_Icons/geololens_logo_620.png
+    2228624: Assets/Splash_Icons/geololens_logo_1240.png
+    2293960: Assets/Splash_Icons/geololens_logo_wide.png
   metroTileShortName: Geololens
   metroTileShowName: 0
   metroMediumTileShowName: 0
-  metroLargeTileShowName: 0
+  metroLargeTileShowName: 1
   metroWideTileShowName: 0
   metroSupportStreamingInstall: 0
   metroLastRequiredScene: 0

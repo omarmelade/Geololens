@@ -6,10 +6,11 @@ public class CreateObject : MonoBehaviour
 {
 
     public GameObject gameObject;
-    public GameObject camera;
+    Camera camera;
 
     public void CreateNewObject()
     {
+        camera = Camera.main;
         Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - gameObject.transform.localScale.y, camera.transform.position.z + 0.8f);
         Instantiate(gameObject, camVect, Quaternion.identity);
     }
@@ -19,13 +20,14 @@ public class CreateObject : MonoBehaviour
         GameObject[] balises = GameObject.FindGameObjectsWithTag("Balise");
         if(balises.Length != 0)
         {
+            Debug.LogWarning("balises trouve");
             GameObject balise = balises[0];
             Vector3 baliseVect = new Vector3(balise.transform.position.x, balise.transform.position.y, balise.transform.position.z);
             Vector3 cornerCube = new Vector3(
                 baliseVect.x + 1 / 2 * gameObject.transform.localScale.x,
                 baliseVect.y + 1/2 * gameObject.transform.localScale.y,
                 baliseVect.z
-                );
+             );
 
             Instantiate(gameObject, cornerCube, Quaternion.identity);
         }
