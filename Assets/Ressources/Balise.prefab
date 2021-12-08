@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7423617448387035078}
   - component: {fileID: 2916591198887870642}
   - component: {fileID: 5640229310277179813}
+  - component: {fileID: 7997229952089555330}
   m_Layer: 0
   m_Name: Balise
   m_TagString: Balise
@@ -196,6 +197,18 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &7997229952089555330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743910938946067089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38b934ae58466a4aab1e9e6aa6d9e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8555296554854430839
 GameObject:
   m_ObjectHideFlags: 0
