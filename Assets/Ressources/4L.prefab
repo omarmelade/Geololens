@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 3530980099529182282}
   - component: {fileID: 5759038220797976372}
   - component: {fileID: 6512966105240831622}
-  - component: {fileID: 1518584285909347124}
   - component: {fileID: 5335768024403724082}
+  - component: {fileID: 2171356960555564779}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -185,7 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a180b9e87bdd1fb4faf0138a0f3970a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 6041066796460707638}
+  selected: 0
+  minWidth: 0
+  maxWidth: 0
 --- !u!114 &6512966105240831622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +206,21 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!54 &1518584285909347124
+--- !u!114 &5335768024403724082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041066796460707638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98de877dee5fc341b4eb59dfdab266c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoConstraintSelection: 1
+  selectedConstraints: []
+--- !u!54 &2171356960555564779
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,20 +236,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5335768024403724082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6041066796460707638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98de877dee5fc341b4eb59dfdab266c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoConstraintSelection: 1
-  selectedConstraints: []
 --- !u!1 &6093976793970686790
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +247,7 @@ GameObject:
   - component: {fileID: 6453976767784025634}
   m_Layer: 0
   m_Name: 4L
-  m_TagString: Untagged
+  m_TagString: Bat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
