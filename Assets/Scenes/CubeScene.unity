@@ -920,7 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e60c65ce7dcfd42910ec235f546b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 794230589}
   model: {fileID: 626417325}
 --- !u!114 &626417336
 MonoBehaviour:
@@ -993,7 +992,6 @@ GameObject:
   - component: {fileID: 794230594}
   - component: {fileID: 794230593}
   - component: {fileID: 794230592}
-  - component: {fileID: 794230591}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1015,29 +1013,6 @@ Transform:
   m_Father: {fileID: 790199930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &794230591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794230589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf98dd1206224111a38765365e98e207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockCursorWhenFocusLocked: 1
-  setCursorInvisibleWhenFocusLocked: 0
-  maxGazeCollisionDistance: 10
-  raycastLayerMasks:
-  - serializedVersion: 2
-    m_Bits: 4294967291
-  stabilizer:
-    storedStabilitySamples: 60
-  gazeTransform: {fileID: 0}
-  minHeadVelocityThreshold: 0.5
-  maxHeadVelocityThreshold: 2
 --- !u!114 &794230592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,7 +1782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e60c65ce7dcfd42910ec235f546b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
   model: {fileID: 3030129504919690264}
 --- !u!114 &3030129504919690270
 MonoBehaviour:
@@ -1916,7 +1890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3030129504919690264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: 0.8}
+  m_LocalPosition: {x: 0.1, y: -0.108, z: 0.379}
   m_LocalScale: {x: 0.00009, y: 0.00009, z: 0.00009}
   m_Children:
   - {fileID: 2462517653570543038}
