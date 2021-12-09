@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5826277128030075695}
   - component: {fileID: 7423617448387035078}
   - component: {fileID: 2916591198887870642}
+  - component: {fileID: 5640229310277179813}
+  - component: {fileID: 7997229952089555330}
   m_Layer: 0
   m_Name: Balise
   m_TagString: Balise
@@ -161,7 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a180b9e87bdd1fb4faf0138a0f3970a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 7743910938946067089}
+  selected: 0
+  minWidth: 0
+  maxWidth: 12.5
 --- !u!65 &2916591198887870642
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -175,6 +179,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9637637, y: 6.754563, z: 1}
   m_Center: {x: 0, y: 5.6633263, z: 0}
+--- !u!114 &5640229310277179813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743910938946067089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7997229952089555330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743910938946067089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38b934ae58466a4aab1e9e6aa6d9e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8555296554854430839
 GameObject:
   m_ObjectHideFlags: 0

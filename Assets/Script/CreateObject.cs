@@ -11,7 +11,15 @@ public class CreateObject : MonoBehaviour
     public void CreateNewObject()
     {
         camera = Camera.main;
-        Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - gameObject.transform.localScale.y, camera.transform.position.z + 0.8f);
+        Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 0.8f);
+        if (gameObject.tag == "Balise")
+        {
+            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y * 4), camera.transform.position.z + 0.8f);
+        }
+        else if (gameObject.tag == "Bat")
+        {
+            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 50f);
+        }
         Instantiate(gameObject, camVect, Quaternion.identity);
     }
 
@@ -25,7 +33,7 @@ public class CreateObject : MonoBehaviour
             Vector3 baliseVect = new Vector3(balise.transform.position.x, balise.transform.position.y, balise.transform.position.z);
             Vector3 cornerCube = new Vector3(
                 baliseVect.x + 1 / 2 * gameObject.transform.localScale.x,
-                baliseVect.y + 1/2 * gameObject.transform.localScale.y,
+                baliseVect.y + 1 / 2 * gameObject.transform.localScale.y,
                 baliseVect.z
              );
 
