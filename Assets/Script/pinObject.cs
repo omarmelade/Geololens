@@ -7,6 +7,8 @@ public class pinObject : MonoBehaviour
     private bool isPinned = false;
     private Mesh mesh;
     private Vector3[] vertices;
+    private List<Vector3> corners;
+    private int shortestIndex;
 
     private Renderer rend;
     private void OnTriggerEnter(Collider other)
@@ -16,7 +18,7 @@ public class pinObject : MonoBehaviour
             vertices = mesh.vertices;
             rend = other.gameObject.GetComponent<Renderer>();
 
-            List<Vector3> corners = new List<Vector3>();
+            corners = new List<Vector3>();
 
             // get all corners
             for (int i = 0; i < vertices.Length; i++)
@@ -33,7 +35,7 @@ public class pinObject : MonoBehaviour
             
             // check the shortest dist 
             float shortestDist = Vector3.Distance(corners[0], this.transform.position);
-            int shortestIndex = 0;
+            shortestIndex = 0;
             for (int j = 0; j < corners.Count; j++)
             {
                 float dist = Vector3.Distance(corners[j], this.transform.position);
@@ -43,13 +45,15 @@ public class pinObject : MonoBehaviour
                     shortestDist = dist;
                 }
             }
-
-            // set the gameobject to the shortest corner
-            this.transform.position = corners[shortestIndex];
-
-            isPinned = true;
-            print("pinned");
         }
-        
+    }
+
+
+    public void UnSelectBalise()
+    {
+        // set the gameobject to the shortest corner
+        this.transform.position = corners[shortestIndex];
+        isPinned = true;
+        print("pinned");
     }
 }
