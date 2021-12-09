@@ -25,9 +25,6 @@ public class pinObject : MonoBehaviour
             { 
                 if (vertices[i].y < rend.bounds.min.y + 1f)
                 {
-                    GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    sphere.transform.position = vertices[i] + other.transform.position;
-
                     Vector3 cornPos = vertices[i] + other.transform.position;
                     corners.Add(cornPos);
                 }
