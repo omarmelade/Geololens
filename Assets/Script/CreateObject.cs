@@ -13,14 +13,16 @@ public class CreateObject : MonoBehaviour
         camera = Camera.main;
         Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 0.8f);
         GameObject[] bat = GameObject.FindGameObjectsWithTag("Bat");
+
         if (gameObject.tag == "Balise")
         {
             camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y * 4), camera.transform.position.z + 0.8f);
             Instantiate(gameObject, camVect, Quaternion.identity);
         }
+        // only one Bat can be instantiate
         else if (gameObject.tag == "Bat" && bat.Length == 0)
         {
-            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 50f);
+            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 25f);
             Instantiate(gameObject, camVect, Quaternion.identity);
         }
         
