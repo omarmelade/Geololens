@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 1, g: 0, b: 0.8991928, a: 0.34901962}
   outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
@@ -1695,10 +1695,10 @@ GameObject:
   - component: {fileID: 3030129504919690266}
   - component: {fileID: 3030129504919690269}
   - component: {fileID: 3030129504919690270}
-  - component: {fileID: 3030129504919690271}
   - component: {fileID: 3030129504919690272}
+  - component: {fileID: 3030129504919690271}
   m_Layer: 0
-  m_Name: tuinbank_v
+  m_Name: Banc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1868,8 +1868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 20.3
+  outlineColor: {r: 1, g: 0, b: 0, a: 0.45490196}
+  outlineWidth: 0
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 1628399074870303028, guid: 9dbe51db197942945bf75436bfb0ec36, type: 3}
