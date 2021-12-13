@@ -49,8 +49,12 @@ public class pinObject : MonoBehaviour
     public void UnSelectBalise()
     {
         // set the gameobject to the shortest corner
-        this.transform.position = corners[shortestIndex];
-        isPinned = true;
-        print("pinned");
+        if (corners.Count > 0)
+        {
+            this.transform.position = corners[shortestIndex];
+            isPinned = true;
+            print("pinned");
+        }
+       
     }
 }
