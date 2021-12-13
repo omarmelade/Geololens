@@ -22,7 +22,7 @@ public class CreateObject : MonoBehaviour
         // only one Bat can be instantiate
         else if (gameObject.tag == "Bat" && bat.Length == 0)
         {
-            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 25f);
+            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 45f);
             Instantiate(gameObject, camVect, Quaternion.identity);
         }
         
