@@ -53,4 +53,6 @@ public class pinObject : MonoBehaviour
         isPinned = true;
         print("pinned");
     }
+
+
 }
