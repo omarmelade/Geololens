@@ -12,7 +12,7 @@ public class pinnedObject : MonoBehaviour
     private bool isPinnedTwice = false;
 
     void Awake(){
-        GetComponent<Microsoft.MixedReality.Toolkit.UI.RotationAxisConstraint>().enabled = false;
+        GetComponent<RotationPointConstraint>().enabled = false;
         GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = false;
 
     }
@@ -23,9 +23,9 @@ public class pinnedObject : MonoBehaviour
         {
             if (other.gameObject == pin)
             {
-                GetComponent<Microsoft.MixedReality.Toolkit.UI.RotationAxisConstraint>().enabled = true;
+                GetComponent<RotationPointConstraint>().constraintPoint = pin.transform;
+                GetComponent<RotationPointConstraint>().enabled = true;
                 GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = true;
-
                 isPinned = true;
             }
         }
