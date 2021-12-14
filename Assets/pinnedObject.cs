@@ -14,6 +14,7 @@ public class pinnedObject : MonoBehaviour
     void Awake(){
         GetComponent<RotationPointConstraint>().enabled = false;
         GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = false;
+        GetComponent<Microsoft.MixedReality.Toolkit.UI.FixedDistanceConstraint>().enabled = false;
 
     }
     private void OnTriggerEnter(Collider other)
@@ -23,9 +24,10 @@ public class pinnedObject : MonoBehaviour
         {
             if (other.gameObject == pin)
             {
-                GetComponent<RotationPointConstraint>().constraintPoint = pin.transform;
-                GetComponent<RotationPointConstraint>().enabled = true;
                 GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = true;
+                GetComponent<Microsoft.MixedReality.Toolkit.UI.FixedDistanceConstraint>().enabled = true;
+                GetComponent<RotationPointConstraint>().constraintPoint = pin;
+                GetComponent<RotationPointConstraint>().enabled = true;
                 isPinned = true;
             }
         }

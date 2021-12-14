@@ -9,17 +9,17 @@ public class RotationPointConstraint : TransformConstraint
 {
     [SerializeField]
     [Tooltip("Constrain rotation about an axis")]
-    public Transform constraintPoint;
-    private Quaternion startObjectRotationPoint;
+    public GameObject constraintPoint;
+    private float angleAtStart;
 
-    public override TransformFlags ConstraintType => TransformFlags.Rotate;
+    public override TransformFlags ConstraintType => TransformFlags.Move;
 
     public override void Initialize(MixedRealityTransform worldPose)
-        {
-            base.Initialize(worldPose);
-            print("initialize");
-            startObjectRotationPoint = Quaternion.Inverse(constraintPoint.transform.rotation) * worldPose.Rotation;
-        }
+    {
+        base.Initialize(worldPose);
+        Vector3 dir = constraintPoint.transform.position - this.transform.position;
+        angleAtStart = Mathf.Atan2(dir.z,dir.x) * Mathf.Rad2Deg;
+    }
 
     public override void ApplyConstraint(ref MixedRealityTransform transform)
     {
@@ -30,11 +30,24 @@ public class RotationPointConstraint : TransformConstraint
         // eulers.z = 0;
 
         // transform.Rotation = Quaternion.Euler(eulers) * constraintPoint.rotation;
-        print("apply");
-        Vector3 dir = constraintPoint.position - transform.Position;
+
+        /*
+        Vector3 pos = transform.Position;
+        pos.x -= constraintPoint.position.x;
+        pos.z -= constraintPoint.position.z;
+
+        Vector3 dir = transform.Position - constraintPoint.position;
+        dir += angleAtStart;
         float angle = Mathf.Atan2(dir.z,dir.x) * Mathf.Rad2Deg;
         transform.Rotation = Quaternion.AngleAxis(angle, Vector3.up);
+        */
+        
+        Vector3 dir = constraintPoint.transform.position - transform.Position;
+        float angle = Mathf.Atan2(dir.z,dir.x) * Mathf.Rad2Deg;
 
+        print(angle-angleAtStart);
+        transform.Rotation = Quaternion.AngleAxis(-(angle-angleAtStart), Vector3.up);
+        
     }
 
 

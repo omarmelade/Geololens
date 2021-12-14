@@ -53,6 +53,7 @@ public class pinObject : MonoBehaviour
         {
             this.transform.position = corners[shortestIndex];
             isPinned = true;
+            GetComponent<BoxCollider>().enabled = false;
             print("pinned");
         }
        
