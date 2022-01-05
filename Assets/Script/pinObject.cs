@@ -9,11 +9,13 @@ public class pinObject : MonoBehaviour
     private Vector3[] vertices;
     private List<Vector3> corners;
     private int shortestIndex;
+    private GameObject refGO;
 
     private Renderer rend;
     private void OnTriggerEnter(Collider other)
     {
         if  (isPinned == false){
+            refGO = other.gameObject;
             mesh = other.gameObject.GetComponent<MeshFilter>().mesh;
             vertices = mesh.vertices;
             rend = other.gameObject.GetComponent<Renderer>();
@@ -54,7 +56,11 @@ public class pinObject : MonoBehaviour
             this.transform.position = corners[shortestIndex];
             isPinned = true;
             GetComponent<BoxCollider>().enabled = false;
-            print("pinned");
+            refGO.GetComponent<pinnedObject>().Pin(this.gameObject);
+        }
+        else
+        {
+            refGO = null;
         }
        
     }

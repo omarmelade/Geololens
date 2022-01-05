@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 8282660386851995924}
   - component: {fileID: 6738350839512543787}
   - component: {fileID: 6948171040626142501}
+  - component: {fileID: 7115675204647951410}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -122,7 +123,7 @@ MonoBehaviour:
   autoConstraintSelection: 1
   selectedConstraints:
   - {fileID: 8282660386851995924}
-  - {fileID: 6738350839512543787}
+  - {fileID: 0}
 --- !u!114 &8997004096740350537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +314,22 @@ MonoBehaviour:
   handType: 3
   proximityType: 3
   constraintTransform: {fileID: 0}
+--- !u!114 &7115675204647951410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041066796460707638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3e6359c9750ad4fb8a05c9b8704d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 3
+  proximityType: 3
+  constraintOnRotation: -1
+  useLocalSpaceForConstraint: 0
 --- !u!1 &6093976793970686790
 GameObject:
   m_ObjectHideFlags: 0

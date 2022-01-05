@@ -9,28 +9,40 @@ public class pinnedObject : MonoBehaviour
 
     public GameObject[] pins;
     private bool isPinned = false;
+    private GameObject firstPin;
+    public GameObject FirstPin{
+        get => firstPin;
+        set => firstPin = value;
+    }
     private bool isPinnedTwice = false;
 
     void Awake(){
-        GetComponent<RotationPointConstraint>().enabled = false;
+        GetComponent<PivotConstraint>().enabled = false;
         GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = false;
         GetComponent<Microsoft.MixedReality.Toolkit.UI.FixedDistanceConstraint>().enabled = false;
+        GetComponent<Microsoft.MixedReality.Toolkit.UI.RotationAxisConstraint>().enabled = false;
 
     }
-    private void OnTriggerEnter(Collider other)
+
+    public void Pin(GameObject pin)
     {
-        pins = GameObject.FindGameObjectsWithTag("Balise");
-        foreach (GameObject pin in pins)
+        if (!isPinned)
         {
-            if (other.gameObject == pin)
-            {
-                GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = true;
-                GetComponent<Microsoft.MixedReality.Toolkit.UI.FixedDistanceConstraint>().enabled = true;
-                GetComponent<RotationPointConstraint>().constraintPoint = pin;
-                GetComponent<RotationPointConstraint>().enabled = true;
-                isPinned = true;
-            }
+            firstPin = pin;
+            GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = true;
+            GetComponent<Microsoft.MixedReality.Toolkit.UI.FixedDistanceConstraint>().enabled = true;
+            GetComponent<PivotConstraint>().constraintPoint = pin;
+            GetComponent<PivotConstraint>().enabled = true;
+            print("Premier pin");
+            isPinned = true;
         }
-        print("Object is pinned");
+        else if (!isPinnedTwice)
+        {
+            GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().ConstraintOnMovement = (AxisFlags) 7;
+            GetComponent<Microsoft.MixedReality.Toolkit.UI.RotationAxisConstraint>().enabled = true;
+            GetComponent<PivotConstraint>().enabled = false;
+            print("Deuxième pin");
+            isPinnedTwice = true;
+        }
     }
 }
