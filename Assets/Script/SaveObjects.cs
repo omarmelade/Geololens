@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class SaveObjects : MonoBehaviour
 {
@@ -10,7 +11,18 @@ public class SaveObjects : MonoBehaviour
         Object[] GameobjectList = Resources.FindObjectsOfTypeAll(typeof(GameObject));
         foreach (GameObject go in GameobjectList)
         {
-            print(go.name);
+            
+            if(go.GetComponent<Saveable>()){
+                string path = AssetDatabase.GetAssetPath(go);
+                print(go);
+                if(path!=""){
+                    path = path.Replace(".prefab", "");
+                    path = path.Replace("Assets/Resources/", "");
+                    Instantiate(Resources.Load<GameObject>(path));
+                }
+            }
+
         }
     }
+   
 }
