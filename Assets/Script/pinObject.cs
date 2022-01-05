@@ -9,7 +9,7 @@ public class pinObject : MonoBehaviour
     private Vector3[] vertices;
     private List<Vector3> corners;
     private int shortestIndex;
-    private GameObject refGO;
+    private GameObject refGO = null;
 
     private Renderer rend;
     private void OnTriggerEnter(Collider other)

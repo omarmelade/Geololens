@@ -9,10 +9,10 @@ public class pinnedObject : MonoBehaviour
 
     public GameObject[] pins;
     private bool isPinned = false;
-    private GameObject firstPin;
-    public GameObject FirstPin{
-        get => firstPin;
-        set => firstPin = value;
+    private GameObject pivotPin;
+    public GameObject PivotPin{
+        get => pivotPin;
+        set => pivotPin = value;
     }
     private bool isPinnedTwice = false;
 
@@ -28,11 +28,13 @@ public class pinnedObject : MonoBehaviour
     {
         if (!isPinned)
         {
-            firstPin = pin;
+            pivotPin = pin;
             GetComponent<Microsoft.MixedReality.Toolkit.UI.MoveAxisConstraint>().enabled = true;
             GetComponent<Microsoft.MixedReality.Toolkit.UI.FixedDistanceConstraint>().enabled = true;
             GetComponent<PivotConstraint>().constraintPoint = pin;
             GetComponent<PivotConstraint>().enabled = true;
+            Vector3 dir = pin.transform.position - this.transform.position;
+            GetComponent<PivotConstraint>().AngleAtStart = Mathf.Atan2(dir.z,dir.x) * Mathf.Rad2Deg;
             print("Premier pin");
             isPinned = true;
         }
