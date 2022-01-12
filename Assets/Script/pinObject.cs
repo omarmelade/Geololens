@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class pinObject : MonoBehaviour
 {
-    private bool isPinned = false;
+    public bool isPinned = false;
     private Mesh mesh;
     private Vector3[] vertices;
     private List<Vector3> corners;
     private int shortestIndex;
+
+    public GameObject refGO = null;
 
     private Renderer rend;
     private void OnTriggerEnter(Collider other)
