@@ -64,4 +64,9 @@ public class pinObject : MonoBehaviour
         }
        
     }
+
+    public void RemovePin()
+    {
+        refGO.GetComponent<pinnedObject>().UnPin(this.gameObject);
+    }
 }
