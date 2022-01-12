@@ -10,8 +10,11 @@ public class pinObject : MonoBehaviour
     private List<Vector3> corners;
     private int shortestIndex;
     private GameObject refGO = null;
-
-    public GameObject refGO = null;
+    public GameObject RefGO
+    {
+        get => refGO;
+        set => refGO = value;
+    }
 
     private Renderer rend;
     private void OnTriggerEnter(Collider other)

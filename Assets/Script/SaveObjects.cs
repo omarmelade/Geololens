@@ -51,7 +51,7 @@ public class SaveObjects : MonoBehaviour
                     if (go.GetComponent<pinObject>())
                     {
                         os.isPinned = go.GetComponent<pinObject>().isPinned;
-                        os.refGO = go.GetComponent<pinObject>().refGO;
+                        os.refGO = go.GetComponent<pinObject>().RefGO;
                     }
                     listeObjet.Add(os);
 
