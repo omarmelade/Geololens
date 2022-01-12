@@ -9,6 +9,7 @@ public class pinObject : MonoBehaviour
     private Vector3[] vertices;
     private List<Vector3> corners;
     private int shortestIndex;
+    private GameObject refGO = null;
 
     public GameObject refGO = null;
 
@@ -16,6 +17,7 @@ public class pinObject : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if  (isPinned == false){
+            refGO = other.gameObject;
             mesh = other.gameObject.GetComponent<MeshFilter>().mesh;
             vertices = mesh.vertices;
             rend = other.gameObject.GetComponent<Renderer>();
@@ -51,9 +53,23 @@ public class pinObject : MonoBehaviour
     public void UnSelectBalise()
     {
         // set the gameobject to the shortest corner
-        this.transform.position = corners[shortestIndex];
-        isPinned = true;
-        print("pinned");
+        if (corners.Count > 0)
+        {
+            this.transform.position = corners[shortestIndex];
+            isPinned = true;
+            GetComponent<BoxCollider>().enabled = false;
+            refGO.GetComponent<pinnedObject>().Pin(this.gameObject);
+        }
+        else
+        {
+            refGO = null;
+        }
+       
+    }
+
+    public void RemovePin()
+    {
+        refGO.GetComponent<pinnedObject>().UnPin(this.gameObject);
     }
 
 
