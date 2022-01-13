@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38b934ae58466a4aab1e9e6aa6d9e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPinned: 0
 --- !u!114 &374725852110594358
 MonoBehaviour:
   m_ObjectHideFlags: 0

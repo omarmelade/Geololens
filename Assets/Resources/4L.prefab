@@ -19,7 +19,6 @@ GameObject:
   - component: {fileID: 6512966105240831622}
   - component: {fileID: 5335768024403724082}
   - component: {fileID: 2171356960555564779}
-  - component: {fileID: 4926048853911035027}
   - component: {fileID: 997802647836596218}
   - component: {fileID: 8282660386851995924}
   - component: {fileID: 6738350839512543787}
@@ -27,7 +26,7 @@ GameObject:
   - component: {fileID: 7115675204647951410}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Bat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

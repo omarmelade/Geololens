@@ -5,27 +5,27 @@ using UnityEngine;
 public class CreateObject : MonoBehaviour
 {
 
-    public GameObject gameObject;
+    public GameObject objet;
     Camera camera;
 
     public void CreateNewObject()
     {
         camera = Camera.main;
-        Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 0.8f);
+        Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y), camera.transform.position.z + 0.8f);
         GameObject[] bat = GameObject.FindGameObjectsWithTag("Bat");
 
-        if (gameObject.tag == "Balise")
-        {
-            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y * 4), camera.transform.position.z + 0.8f);
-            Instantiate(gameObject, camVect, Quaternion.identity);
-        }
         // only one Bat can be instantiate
-        else if (gameObject.tag == "Bat" && bat.Length == 0)
+        if (objet.tag == "Bat" && bat.Length == 0)
         {
-            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 45f);
-            Instantiate(gameObject, camVect, Quaternion.identity);
+            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y), camera.transform.position.z + 45f);
+            Instantiate(objet, camVect, Quaternion.identity);
         }
         
+        else
+        {
+            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y * 4), camera.transform.position.z + 0.8f);
+            Instantiate(objet, camVect, Quaternion.identity);
+        }
     }
 
     public void CreateNewObjectOnBalise()
@@ -37,12 +37,12 @@ public class CreateObject : MonoBehaviour
             GameObject balise = balises[0];
             Vector3 baliseVect = new Vector3(balise.transform.position.x, balise.transform.position.y, balise.transform.position.z);
             Vector3 cornerCube = new Vector3(
-                baliseVect.x + 1 / 2 * gameObject.transform.localScale.x,
-                baliseVect.y + 1 / 2 * gameObject.transform.localScale.y,
+                baliseVect.x + 1 / 2 * objet.transform.localScale.x,
+                baliseVect.y + 1 / 2 * objet.transform.localScale.y,
                 baliseVect.z
              );
 
-            Instantiate(gameObject, cornerCube, Quaternion.identity);
+            Instantiate(objet, cornerCube, Quaternion.identity);
         }
     }
 }
