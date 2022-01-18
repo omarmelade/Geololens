@@ -54,3 +54,5 @@ MRTKBuild/
 MSBuild/
 PackagesCopy/
 !scripts/Packaging/NuGetRestoreProject.csproj
+Packages/packages-lock.json
+Packages/packages-lock.json

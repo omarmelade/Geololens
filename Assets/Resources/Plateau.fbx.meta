@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 9dbe51db197942945bf75436bfb0ec36
+guid: 3cb162e2e20b6414192b9f2b4459ecf5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Plateau
+    second: {fileID: 2100000, guid: 353f0d27d3a1f1242bb505665084138e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -31,7 +36,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
