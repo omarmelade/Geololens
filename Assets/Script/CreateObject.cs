@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 public class CreateObject : MonoBehaviour
 {
 
@@ -18,14 +18,13 @@ public class CreateObject : MonoBehaviour
         if (objet.tag == "Bat" && bat.Length == 0)
         {
             camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y), camera.transform.position.z + 45f);
-            Instantiate(objet, camVect, Quaternion.identity);
         }
-        
         else
         {
             camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y * 4), camera.transform.position.z + 0.8f);
-            Instantiate(objet, camVect, Quaternion.identity);
+
         }
+        GameObject go = Instantiate(objet, camVect, Quaternion.identity);
     }
 
     public void CreateNewObjectOnBalise()

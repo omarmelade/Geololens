@@ -1,0 +1,30 @@
+{
+    "objects": [
+        {
+            "instanceID": -35258,
+            "path": "Banc",
+            "name": "Banc",
+            "position": {
+                "x": 0.0,
+                "y": 5.0,
+                "z": 0.800000011920929
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.009999999776482582,
+                "y": 0.009999999776482582,
+                "z": 0.009999999776482582
+            },
+            "gravity": true,
+            "kinematic": true,
+            "isPinned": false,
+            "refGO": {
+                "instanceID": 0
+            }
+        }
+    ]
+}

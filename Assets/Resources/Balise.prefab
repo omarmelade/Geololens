@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5640229310277179813}
   - component: {fileID: 7997229952089555330}
   - component: {fileID: 374725852110594358}
+  - component: {fileID: 3095068807351193919}
   m_Layer: 0
   m_Name: Balise
   m_TagString: Balise
@@ -222,6 +223,18 @@ MonoBehaviour:
   proximityType: 3
   constraintOnRotation: -1
   useLocalSpaceForConstraint: 0
+--- !u!114 &3095068807351193919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743910938946067089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6795d6ef4a687048b1c23f7e536ec0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8555296554854430839
 GameObject:
   m_ObjectHideFlags: 0

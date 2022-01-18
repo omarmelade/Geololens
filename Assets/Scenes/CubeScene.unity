@@ -10049,7 +10049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c655ebcbaeeae4da292943e20bf2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objet: {fileID: 2576678438720392923, guid: 1fab6287eaa038a4d96b48efc67a1f14, type: 3}
+  objet: {fileID: 2624774372259632049, guid: b1316574efa47014093918611d7c64cd, type: 3}
 --- !u!65 &1819434966270329365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16788,6 +16788,7 @@ GameObject:
   - component: {fileID: 4140786306043936717}
   - component: {fileID: 2687168258850088804}
   - component: {fileID: 6000399129147233781}
+  - component: {fileID: 4140786306043936718}
   m_Layer: 0
   m_Name: ButtonFive
   m_TagString: Untagged
@@ -16891,6 +16892,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4140786306043936718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140786306043936716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a86737c517e8c41947ff1e5e11ec73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &4140786306043936720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17318,6 +17331,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 291bf9326e517b0489c2ee53d0a6a63f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4140786306043936718}
+        m_TargetAssemblyTypeName: SaveObjects, Assembly-CSharp
+        m_MethodName: LoadSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19032,7 +19057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c655ebcbaeeae4da292943e20bf2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objet: {fileID: 3070170667537094919, guid: 5834e1d2ed7630448a85ec0b22ecd256, type: 3}
+  objet: {fileID: 8935185123628122631, guid: b4ac376868e5d5349b3296ca26f34d15, type: 3}
 --- !u!65 &4629867458737445650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29001,7 +29026,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153317760878356713}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4684083f6dff4a1d8a790bccc354fcf4, type: 3}
   m_Name: 
