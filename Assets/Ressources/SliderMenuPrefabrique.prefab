@@ -5232,7 +5232,7 @@ GameObject:
   - component: {fileID: 2196296585812298872}
   - component: {fileID: 1375959030457883264}
   m_Layer: 0
-  m_Name: SliderMenu
+  m_Name: SliderMenuPrefabrique
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
