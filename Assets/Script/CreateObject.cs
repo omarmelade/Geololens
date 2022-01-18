@@ -22,6 +22,7 @@ public class CreateObject : MonoBehaviour
         {
             camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (gameObject.transform.localScale.y), camera.transform.position.z + 50f);
         }
+
         Instantiate(gameObject, camVect, Quaternion.identity);
     }
 
