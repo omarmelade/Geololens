@@ -24570,6 +24570,7 @@ GameObject:
   - component: {fileID: 4140786306043936717}
   - component: {fileID: 2687168258850088804}
   - component: {fileID: 6000399129147233781}
+  - component: {fileID: 4140786306043936718}
   m_Layer: 0
   m_Name: ButtonFive
   m_TagString: Untagged
@@ -24673,6 +24674,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4140786306043936718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140786306043936716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a86737c517e8c41947ff1e5e11ec73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &4140786306043936720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25100,6 +25113,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 291bf9326e517b0489c2ee53d0a6a63f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4140786306043936718}
+        m_TargetAssemblyTypeName: SaveObjects, Assembly-CSharp
+        m_MethodName: LoadSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
