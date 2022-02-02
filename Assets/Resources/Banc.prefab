@@ -177,7 +177,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3397617159195969803}
   - component: {fileID: 2364963312092549565}
-  - component: {fileID: 7306996212721783751}
   - component: {fileID: 7742335059741715465}
   - component: {fileID: 7480519237740815382}
   - component: {fileID: -9177318965483490204}
@@ -188,7 +187,7 @@ GameObject:
   - component: {fileID: 2071069640575803856}
   m_Layer: 0
   m_Name: Banc
-  m_TagString: Untagged
+  m_TagString: Banc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,19 +221,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
---- !u!114 &7306996212721783751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2624774372259632049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1cd4947f0a7d348bd736f6b79b03f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 0}
 --- !u!114 &7742335059741715465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e60c65ce7dcfd42910ec235f546b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
+  model: {fileID: 2624774372259632049}
 --- !u!114 &-7755813389559518798
 MonoBehaviour:
   m_ObjectHideFlags: 0

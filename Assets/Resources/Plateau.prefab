@@ -17,13 +17,12 @@ GameObject:
   - component: {fileID: -3835301786910287014}
   - component: {fileID: -611999399799163951}
   - component: {fileID: -9005412384265881193}
-  - component: {fileID: 469029021198304456}
   - component: {fileID: 7162672077254639702}
   - component: {fileID: -7540971397934487126}
   - component: {fileID: 401813918382364549}
   m_Layer: 0
   m_Name: Plateau
-  m_TagString: Untagged
+  m_TagString: Plateau
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,19 +203,6 @@ MonoBehaviour:
   selected: 0
   minWidth: 0
   maxWidth: 0
---- !u!114 &469029021198304456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8935185123628122631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1cd4947f0a7d348bd736f6b79b03f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 0}
 --- !u!114 &7162672077254639702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e60c65ce7dcfd42910ec235f546b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
+  model: {fileID: 8935185123628122631}
 --- !u!114 &-7540971397934487126
 MonoBehaviour:
   m_ObjectHideFlags: 0
