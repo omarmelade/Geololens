@@ -69,7 +69,9 @@ public class SaveObjects : MonoBehaviour
         print(jsonSave.GetType());
         print(jsonSave);
     }
-   
+
+
+
    public void LoadSave()
    {
         print("LoadSave");
