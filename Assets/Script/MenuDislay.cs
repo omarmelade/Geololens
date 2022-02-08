@@ -22,50 +22,57 @@ public class MenuDislay : MonoBehaviour
 
     public void afficheMenu()
     {
-        menu.SetActive(!menu.active);
-        if (menu.tag == "Arborescence")
+        if(menu.tag == "Arborescence")
         {
-            Transform ArborescenceBalise = menu.transform.GetChild(0);
-            string s = "";
-            float y = 0.0f;
-            int nb_go = 0;
-            //Code de mise à jour Arborescence
-            List<ObjetScene> listeObjet = new List<ObjetScene>();
-            Object[] GameobjectList = Resources.FindObjectsOfTypeAll(typeof(GameObject));
-            foreach (GameObject go in GameobjectList)
+            maj_Arbo(menu);
+        }
+        menu.SetActive(!menu.active);
+    }
+
+    public void maj_Arbo(GameObject menu)
+    {
+        menu.transform.rotation = new Quaternion(0,0,0,0);
+        for(int i = menu.transform.childCount - 1; i >= 5; i--)
+        { 
+            Destroy(menu.transform.GetChild(i).gameObject);
+        }
+        Transform ArborescenceBalise = menu.transform.GetChild(4);
+        string s = "";
+        float y = 0.0f;
+        int nb_go = 0;
+        //Code de mise ï¿½ jour Arborescence
+        List<ObjetScene> listeObjet = new List<ObjetScene>();
+        Object[] GameobjectList = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+        foreach (GameObject go in GameobjectList)
+        {
+            if (go.GetComponent<Saveable>() && go.active)
             {
-                if (go.GetComponent<Saveable>() && go.active)
+                if (go.tag == "Banc")
                 {
-                    if(go.tag == "Banc")
-                    {
-                        s = "- Table de Pique Nique";
-                    }
-                    if (go.tag == "Balise")
-                    {
-                        s = "- Balise";
-                    }
-                    if (go.tag == "Plateau")
-                    {
-                        s = "- Plateau";
-                    }
-                    if (go.tag == "Bat")
-                    {
-                        s = "- Quatrième ailes";
-                    }
-                    if (go.tag == "Bag")
-                    {
-                        s = "- Sac";
-                    }
-                    Debug.Log(s);
-                    nb_go++;
-                    Debug.Log(nb_go);
-                    y = -0.015f*nb_go;
-                    Debug.Log(y);
-                    TextMeshPro text = Instantiate(ArborescenceBalise.GetComponent<TextMeshPro>());
-                    text.text = s;
-                    text.transform.parent = ArborescenceBalise;
-                    text.transform.position = new Vector3(text.transform.parent.position.x, text.transform.parent.position.y + y, text.transform.parent.position.z);
+                    s = "- Table de Pique Nique";
                 }
+                if (go.tag == "Balise")
+                {
+                    s = "- Balise";
+                }
+                if (go.tag == "Plateau")
+                {
+                    s = "- Plateau";
+                }
+                if (go.tag == "Bat")
+                {
+                    s = "- QuatriÃ©me ailes";
+                }
+                if (go.tag == "Bag")
+                {
+                    s = "- Sac";
+                }
+                nb_go++;
+                y = -0.015f * nb_go;
+                TextMeshPro text = Instantiate(ArborescenceBalise.GetComponent<TextMeshPro>(), menu.transform);
+                text.text = s;
+                text.transform.parent = menu.transform;
+                text.transform.position = new Vector3(ArborescenceBalise.position.x, ArborescenceBalise.position.y + y, ArborescenceBalise.position.z);
             }
         }
     }

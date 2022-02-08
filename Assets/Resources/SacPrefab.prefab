@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 6448809218635027529}
   - component: {fileID: 7688242513177935296}
   - component: {fileID: 7777362517484219304}
+  - component: {fileID: 104999611938310915}
   m_Layer: 0
   m_Name: SacPrefab
-  m_TagString: Untagged
+  m_TagString: Bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,10 +174,46 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7777362517484219304}
+        m_TargetAssemblyTypeName: SetColor, Assembly-CSharp
+        m_MethodName: SelectColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 104999611938310915}
+        m_TargetAssemblyTypeName: SetLastObject, Assembly-CSharp
+        m_MethodName: setLastSelectedObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7777362517484219304}
+        m_TargetAssemblyTypeName: SetColor, Assembly-CSharp
+        m_MethodName: UnSelectColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -198,6 +235,18 @@ MonoBehaviour:
   selected: 0
   minWidth: 0
   maxWidth: 0
+--- !u!114 &104999611938310915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8219133895143639677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7a6155b36938b44ad0c91bc6ae564c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4842158620698930987
 PrefabInstance:
   m_ObjectHideFlags: 0
