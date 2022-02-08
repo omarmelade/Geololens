@@ -64,7 +64,7 @@ public class SolarPanelPowerDelivery : MonoBehaviour
 
     private void save()
     {
-        string json = File.ReadAllText
+        // string json = File.ReadAllText;
     }
 
 }
