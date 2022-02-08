@@ -1,33 +1,51 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Net;
 using System.IO;
 using System;
+using Newtonsoft.Json.Linq;
+
 
 [Serializable]
 public struct RadiationByMonth
 {
-    public List<RadiationByHour> monthRadiation;
+    public RadiationByMonth(int month)
+    {
+        _month = month;
+        _tabMonthRadiation = new List<RadiationByHour>();
+    }
+    public int _month;
+    public List<RadiationByHour> _tabMonthRadiation;
 }
 
 [Serializable]
 public struct RadiationByHour
 {
-    int month;
-    int time;
-    double globalIrradiance;
-    double directIrradiance;
-    double diffuseIrradiance;
+    public RadiationByHour(int time, double globalIrradiance)
+    {
+        _time = time;
+        _globalIrradiance = globalIrradiance;
+    }
+    public int _time;
+    public double _globalIrradiance;
 }
+
+
+
 
 public class SolarPanelPowerDelivery : MonoBehaviour
 {
+    public List<RadiationByMonth> tabRadiationByMonth = new List<RadiationByMonth>();
     // Start is called before the first frame update
     void Start()
     {   
-        GetRadiationByMonth(2);
-        print( ProducedPowerPerHour(1.6, 4.5, 320) );
+        for(int i = 1; i <= 12; i++)
+        {
+            GetRadiationByMonth(i);
+        }
+        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H ) : " + ProducedPowerPerRangeHour(1,350,9,15,2) );
+        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H ) : " + ProducedPowerPerRangeHour(1,350,9,15,8) );
+        print(ProducedPowerPerHour(1, 350, 646));
     }
 
     // Update is called once per frame
@@ -36,35 +54,58 @@ public class SolarPanelPowerDelivery : MonoBehaviour
 
     private void GetRadiationByMonth( int month )
     {
-
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format($"https://re.jrc.ec.europa.eu/api/DRcalc?lat=45&lon=8&month={month}&global=1&outputformat=json"));
+        
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format($"https://re.jrc.ec.europa.eu/api/DRcalc?lat=45.643&lon=5.871&month={month}&global=1&outputformat=json"));
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string jsonResponse = reader.ReadToEnd();
-        string res = JsonUtility.ToJson(jsonResponse);
-        print(res);
+        JObject json  = JObject.Parse(jsonResponse);
+        
+        RadiationByMonth radiationByMonth = new RadiationByMonth(month);
+
+        foreach (JObject item in json["outputs"]["daily_profile"])
+        {
+            int time = int.Parse(item["time"].ToObject<string>().Substring(0,2));
+            double radiation = item["G(i)"].ToObject<double>();
+
+            RadiationByHour rBH = new RadiationByHour(time, radiation);
+            radiationByMonth._tabMonthRadiation.Add(rBH);
+        }
+        tabRadiationByMonth.Add(radiationByMonth);
     }
 
     // calculate the efficiency of solar panel
     // r = (Wc/(radiation*panelSize))/100
     private double Efficiency(double WattCrete, double radiation, double panelSize ){
-        return (WattCrete/ (radiation*panelSize))/100;
+        return (WattCrete/ (radiation*panelSize)) * 100;
     }
     
     // E = ( (Tp*1000) * r1 *h1 ) /1000
-    private double ProducedPowerPerHour(double panelSize, double hour, double WattCrete)
+    private double ProducedPowerPerHour(double panelSize, double WattCrete, double radiation)
     {
-        
-        double radiation = 79.96; // for 15h
         double r = Efficiency(WattCrete, radiation, panelSize);
-        double energy = ((panelSize * 1000) * r * hour) / 1000;
+        double energy = ((panelSize * 1000) * r) / 1000;
+
         return energy;
     }
 
-
-    private void save()
+    
+    private double ProducedPowerPerRangeHour(double panelSize, double WattCrete, int hourExposedStart, int hourExposedEnd, int month)
     {
-        // string json = File.ReadAllText;
+        int Hrange = mod((hourExposedEnd - hourExposedStart), 24);
+        double kwPerH = 0;
+        for (int i = 1; i <= Hrange; i++)
+        {
+            double radiation = tabRadiationByMonth[month-1]._tabMonthRadiation[hourExposedStart+i]._globalIrradiance;
+            kwPerH += ProducedPowerPerHour(panelSize, WattCrete, radiation);
+            print(radiation);
+            print(hourExposedStart+i +": "+ "kw :" + kwPerH);
+        }
+        return kwPerH;
+    }
+
+    public int mod(int x, int m) {
+        return (x%m + m) % m;
     }
 
 }
