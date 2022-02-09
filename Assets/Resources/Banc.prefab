@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 7335215523342016425}
   - component: {fileID: 2071069640575803856}
   - component: {fileID: 6615253186588269568}
+  - component: {fileID: 676589827424192396}
   m_Layer: 0
   m_Name: Banc
   m_TagString: Banc
@@ -414,6 +415,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7a6155b36938b44ad0c91bc6ae564c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &676589827424192396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624774372259632049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfdd7c8624db95449bd29ba569f3459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderM: {fileID: 0}
+  sliderH: {fileID: 0}
+  valH: {fileID: 0}
+  valM: {fileID: 0}
+  valRes: {fileID: 0}
+  tabRadiationByMonth: []
 --- !u!1 &5085146342561059480
 GameObject:
   m_ObjectHideFlags: 0

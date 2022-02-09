@@ -4,7 +4,9 @@ using System.Net;
 using System.IO;
 using System;
 using Newtonsoft.Json.Linq;
-
+using Microsoft.MixedReality.Toolkit.UI;
+using TMPro;
+using System;
 
 [Serializable]
 public struct RadiationByMonth
@@ -31,10 +33,17 @@ public struct RadiationByHour
 }
 
 
-
-
 public class SolarPanelPowerDelivery : MonoBehaviour
 {
+
+
+    public PinchSlider sliderM;
+    public PinchSlider sliderH;
+
+    public GameObject valH;
+    public GameObject valM;
+    public GameObject valRes;
+
     public List<RadiationByMonth> tabRadiationByMonth = new List<RadiationByMonth>();
     // Start is called before the first frame update
     void Start()
@@ -43,9 +52,8 @@ public class SolarPanelPowerDelivery : MonoBehaviour
         {
             GetRadiationByMonth(i);
         }
-        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H  en Février) : " + ProducedPowerPerRangeHour(1,350,9,15,2) );
-        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H en Aout ) : " + ProducedPowerPerRangeHour(1,350,9,15,8) );
-        // print(ProducedPowerPerHour(1, 350, 646));
+        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H ) : " + ProducedPowerPerRangeHour(1,350,9,15,2) );
+        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H ) : " + ProducedPowerPerRangeHour(1,350,9,15,8) );
     }
 
     // Update is called once per frame
@@ -76,10 +84,9 @@ public class SolarPanelPowerDelivery : MonoBehaviour
 
     // calculate the efficiency of solar panel
     // r = (Wc/(radiation*panelSize))/100
-    /*private double Efficiency(double WattCrete, double radiation, double panelSize ){
-
-        return (WattCrete/ (radiation*panelSize)) ;
-    }*/
+    private double Efficiency(double WattCrete, double radiation, double panelSize ){
+        return (WattCrete/ (radiation*panelSize)) * 100;
+    }
     
     // E = ( (Tp*1000) * r1 *h1 ) /1000
     private double ProducedPowerPerHour(double panelSize, double WattCrete, double radiation)
@@ -90,7 +97,6 @@ public class SolarPanelPowerDelivery : MonoBehaviour
 
         return energy;
     }
-
     
     private double ProducedPowerPerRangeHour(double panelSize, double WattCrete, int hourExposedStart, int hourExposedEnd, int month)
     {
@@ -100,6 +106,8 @@ public class SolarPanelPowerDelivery : MonoBehaviour
         {
             double radiation = tabRadiationByMonth[month-1]._tabMonthRadiation[hourExposedStart+i]._globalIrradiance;
             kwPerH += ProducedPowerPerHour(panelSize, WattCrete, radiation);
+            // print(radiation);
+            // print(hourExposedStart+i +": "+ "kw :" + kwPerH);
         }
         return kwPerH;
     }
@@ -107,5 +115,15 @@ public class SolarPanelPowerDelivery : MonoBehaviour
     public int mod(int x, int m) {
         return (x%m + m) % m;
     }
+
+
+    // public void updateValHPlus(){
+        
+
+    //     valtxtX.SetText("");
+    //     valtxtX.SetText("Heures : " + valtxtX.text);
+    //     double valPower = ProducedPowerPerRangeHour(1.5, 350, (int)sliderVal, (int)sliderVal1, (int)sliderValM);
+    //     valResTxt.SetText("Power Produced : " + valPower + " Kw/H");
+    // }
 
 }
