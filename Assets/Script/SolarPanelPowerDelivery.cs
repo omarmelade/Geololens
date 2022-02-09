@@ -43,8 +43,8 @@ public class SolarPanelPowerDelivery : MonoBehaviour
         {
             GetRadiationByMonth(i);
         }
-        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H ) : " + ProducedPowerPerRangeHour(1,350,9,15,2) );
-        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H ) : " + ProducedPowerPerRangeHour(1,350,9,15,8) );
+        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H  en Février) : " + ProducedPowerPerRangeHour(1,350,9,15,2) );
+        print("Production de 15H à 9H ( " + mod(15-9, 24) + "H en Aout ) : " + ProducedPowerPerRangeHour(1,350,9,15,8) );
         // print(ProducedPowerPerHour(1, 350, 646));
     }
 
@@ -86,7 +86,6 @@ public class SolarPanelPowerDelivery : MonoBehaviour
     {
         // double r = Efficiency(WattCrete, radiation, panelSize);
         double r = 0.14;
-        print("r : " + r);
         double energy = ((panelSize * radiation) * r) / 1000;
 
         return energy;
@@ -101,8 +100,6 @@ public class SolarPanelPowerDelivery : MonoBehaviour
         {
             double radiation = tabRadiationByMonth[month-1]._tabMonthRadiation[hourExposedStart+i]._globalIrradiance;
             kwPerH += ProducedPowerPerHour(panelSize, WattCrete, radiation);
-            print(radiation);
-            print(hourExposedStart+i +": "+ "kw :" + ProducedPowerPerHour(panelSize, WattCrete, radiation));
         }
         return kwPerH;
     }
