@@ -17,7 +17,6 @@ public class MenuDislay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void afficheMenu()
@@ -42,7 +41,8 @@ public class MenuDislay : MonoBehaviour
         string s = "";
         float y = 0.0f;
         int nb_go = 0;
-        //Code de mise à jour Arborescence
+
+        //Code de mise ï¿½ jour Arborescence
         List<ObjetScene> listeObjet = new List<ObjetScene>();
         Object[] GameobjectList = Resources.FindObjectsOfTypeAll(typeof(GameObject));
         foreach (GameObject go in GameobjectList)
@@ -63,7 +63,7 @@ public class MenuDislay : MonoBehaviour
                 }
                 if (go.tag == "Bat")
                 {
-                    s = "- Quatrième ailes";
+                    s = "- Quatriï¿½me ailes";
                 }
                 if (go.tag == "Bag")
                 {
