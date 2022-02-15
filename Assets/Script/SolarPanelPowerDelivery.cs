@@ -4,9 +4,6 @@ using System.Net;
 using System.IO;
 using System;
 using Newtonsoft.Json.Linq;
-using Microsoft.MixedReality.Toolkit.UI;
-using TMPro;
-using System;
 
 [Serializable]
 public struct RadiationByMonth
@@ -37,14 +34,7 @@ public class SolarPanelPowerDelivery : MonoBehaviour
 {
 
 
-    public PinchSlider sliderM;
-    public PinchSlider sliderH;
-
-    public GameObject valH;
-    public GameObject valM;
-    public GameObject valRes;
-
-    public List<RadiationByMonth> tabRadiationByMonth = new List<RadiationByMonth>();
+    private List<RadiationByMonth> tabRadiationByMonth = new List<RadiationByMonth>();
     // Start is called before the first frame update
     void Start()
     {   
@@ -98,8 +88,14 @@ public class SolarPanelPowerDelivery : MonoBehaviour
         return energy;
     }
     
-    private double ProducedPowerPerRangeHour(double panelSize, double WattCrete, int hourExposedStart, int hourExposedEnd, int month)
+    public double ProducedPowerPerRangeHour(double panelSize, double WattCrete, int hourExposedStart, int hourExposedEnd, int month)
     {
+        if (hourExposedStart > hourExposedEnd)
+        {
+            int tmp = hourExposedStart;
+            hourExposedStart = hourExposedEnd;
+            hourExposedEnd = tmp;
+        }
         int Hrange = mod((hourExposedEnd - hourExposedStart), 24);
         double kwPerH = 0;
         for (int i = 1; i <= Hrange; i++)
