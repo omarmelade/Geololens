@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class VirtualObject : MonoBehaviour
 {
+    // Arborescence
     protected GameObject parent = null;
     protected List<GameObject> children = new List<GameObject>();
+
     protected string virtualName = "";
     protected string iconName = "";
     protected Color highlightColor = new Color(1.0f,0.0f,0.0f);
+
     protected Material realMaterial = null;
+
     protected bool highlighted = false;
     protected bool useGravity = false;
+
+    [SerializeField]
+    protected Camera camera;
+
+    [SerializeField]
+    protected GameObject accurateUIPrefab = null;
+    protected GameObject accurateUI = null;
 
     public void Start() {
         if(this.gameObject.GetComponent<Renderer>() != null) {
@@ -35,7 +46,7 @@ public class VirtualObject : MonoBehaviour
 
     /**
      * Called when a new child was added
-     * Rewrite this in childs classes
+     * Rewrite me in children classes
      */
     public virtual void OnAddChild(GameObject child) { }
 
@@ -46,7 +57,7 @@ public class VirtualObject : MonoBehaviour
 
     /**
      * Called when the parent is set
-     * Rewrite this in childs classes
+     * Rewrite me in children classes
      */
     protected virtual void OnSetParent(GameObject parent) { }
 
@@ -100,7 +111,7 @@ public class VirtualObject : MonoBehaviour
 
     /**
      * Called when the highlight of an object is toggled
-     * Rewriteme in childs classes
+     * Rewrite me in children classes
      */
     protected virtual void OnHighlightChanged() { }
 
@@ -124,7 +135,7 @@ public class VirtualObject : MonoBehaviour
     }
 
     /**
-     * Rewite me in childs classes
+     * Rewite me in children classes
      */
     protected virtual void OnApplyGravity() {
         this.gameObject.GetComponent<Rigidbody>().useGravity = true;
@@ -132,7 +143,7 @@ public class VirtualObject : MonoBehaviour
     }
 
     /**
-     * Rewite me in childs classes
+     * Rewite me in children classes
      */
     protected virtual void OnRemoveGravity()
     {
@@ -140,11 +151,28 @@ public class VirtualObject : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
+    /**
+     * Rewrite me in children classes
+     */ 
     public virtual void ShowAccurateUI() {
-
+        if(accurateUI != null) {
+            Debug.LogWarning("You can't instantiate two AccurateUI.");
+            return;
+        }
+        Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (transform.localScale.y), camera.transform.position.z + 0.8f);
+        accurateUI = Instantiate(accurateUIPrefab,camVect,Quaternion.identity);
+        accurateUI.GetComponent<ObjectTarget>().SetTarget(gameObject);
     }
 
+    /**
+     * Rewrite me in children classes
+     */ 
     public virtual void HideAccurateUI() {
-
+        if(accurateUI == null) {
+            Debug.LogWarning("There is no AccurateUI.");
+            return;
+        }
+        Destroy(accurateUI);
+        accurateUI = null;
     }
 }
