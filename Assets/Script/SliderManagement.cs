@@ -10,13 +10,18 @@ using System;
 public class SliderManagement : MonoBehaviour
 {
     public String axe;
-    public GameObject obj;
+    private GameObject obj;
     public PinchSlider slider;
     public GameObject valV;
 
     private bool holding = false;
     private Vector3 posAtBegin = Vector3.zero;
 
+
+    public void Start()
+    {
+        obj = transform.parent.parent.gameObject.GetComponent<ObjectTarget>().GetTarget();
+    }
 
     /// ------------------ POSITION
     public void ChangePositionVal()
@@ -25,6 +30,7 @@ public class SliderManagement : MonoBehaviour
         setupPos();
         Vector3 newVectorPos;
         float posValToText;
+        
         switch (axe)
         {
             case "x":
