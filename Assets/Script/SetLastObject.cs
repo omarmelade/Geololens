@@ -20,9 +20,9 @@ public class SetLastObject : MonoBehaviour
 
     public void setLastSelectedObject()
     {
-        lastSelected.gameObject.GetComponent<VirtualObject>().textArbo.color = Color.white;
+        //lastSelected.gameObject.GetComponent<VirtualObject>().textArbo.color = Color.white;
         lastSelected = transform.gameObject;
-        transform.gameObject.GetComponent<VirtualObject>().textArbo.color = Color.green;
+        //transform.gameObject.GetComponent<VirtualObject>().textArbo.color = Color.green;
         Debug.Log(lastSelected);
     }
 }
