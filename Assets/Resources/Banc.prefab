@@ -185,11 +185,10 @@ GameObject:
   - component: {fileID: -7642350948713445252}
   - component: {fileID: 7335215523342016425}
   - component: {fileID: 2071069640575803856}
-  - component: {fileID: 6615253186588269568}
-  - component: {fileID: 676589827424192396}
+  - component: {fileID: 1523258251147551487}
   m_Layer: 0
   m_Name: Banc
-  m_TagString: Banc
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 2624774372259632049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0001, y: 0.0001, z: 0.0001}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 1485396185673534631}
   m_Father: {fileID: 0}
@@ -270,46 +269,10 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7755813389559518798}
-        m_TargetAssemblyTypeName: SetColor, Assembly-CSharp
-        m_MethodName: SelectColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6615253186588269568}
-        m_TargetAssemblyTypeName: SetLastObject, Assembly-CSharp
-        m_MethodName: setLastSelectedObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7755813389559518798}
-        m_TargetAssemblyTypeName: SetColor, Assembly-CSharp
-        m_MethodName: UnSelectColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -403,7 +366,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6615253186588269568
+--- !u!114 &1523258251147551487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,27 +375,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2624774372259632049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7a6155b36938b44ad0c91bc6ae564c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c0c139bb62971c4693ef03102cd7f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &676589827424192396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2624774372259632049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbfdd7c8624db95449bd29ba569f3459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderM: {fileID: 0}
-  sliderH: {fileID: 0}
-  valH: {fileID: 0}
-  valM: {fileID: 0}
-  valRes: {fileID: 0}
-  tabRadiationByMonth: []
+  applicableObject: {fileID: 2624774372259632049}
+  virtualName: Table de picnic
+  iconName: 
+  highlightColor: {r: 0, g: 1, b: 0.09951925, a: 1}
+  accurateUIPrefab: {fileID: 8519374817744116813, guid: 8393c4f14c8f5a14683c75d166a87150, type: 3}
 --- !u!1 &5085146342561059480
 GameObject:
   m_ObjectHideFlags: 0

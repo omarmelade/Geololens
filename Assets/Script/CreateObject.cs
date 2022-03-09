@@ -24,7 +24,9 @@ public class CreateObject : MonoBehaviour
             camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y * 4), camera.transform.position.z + 0.8f);
 
         }
-        GameObject go = Instantiate(objet, camVect, Quaternion.identity);
+        GameObject go = (GameObject) Instantiate(objet, camVect, Quaternion.identity);
+        GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().AddVirtualChild(go.gameObject);
+        GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().GetVirtualTreeText();
     }
 
     public void CreateNewObjectOnBalise()

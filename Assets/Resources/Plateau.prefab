@@ -17,13 +17,14 @@ GameObject:
   - component: {fileID: -3835301786910287014}
   - component: {fileID: -611999399799163951}
   - component: {fileID: -9005412384265881193}
+  - component: {fileID: 469029021198304456}
   - component: {fileID: 7162672077254639702}
   - component: {fileID: -7540971397934487126}
   - component: {fileID: 401813918382364549}
-  - component: {fileID: -7722959201189757931}
+  - component: {fileID: 8399448511856910855}
   m_Layer: 0
   m_Name: Plateau
-  m_TagString: Plateau
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,46 +180,10 @@ MonoBehaviour:
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7722959201189757931}
-        m_TargetAssemblyTypeName: SetLastObject, Assembly-CSharp
-        m_MethodName: setLastSelectedObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -9005412384265881193}
-        m_TargetAssemblyTypeName: SetColor, Assembly-CSharp
-        m_MethodName: SelectColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onManipulationEnded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -9005412384265881193}
-        m_TargetAssemblyTypeName: SetColor, Assembly-CSharp
-        m_MethodName: UnSelectColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -240,6 +205,19 @@ MonoBehaviour:
   selected: 0
   minWidth: 0
   maxWidth: 0
+--- !u!114 &469029021198304456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935185123628122631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1cd4947f0a7d348bd736f6b79b03f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 0}
 --- !u!114 &7162672077254639702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoConstraintSelection: 1
   selectedConstraints: []
---- !u!114 &-7722959201189757931
+--- !u!114 &8399448511856910855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,6 +272,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8935185123628122631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7a6155b36938b44ad0c91bc6ae564c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c0c139bb62971c4693ef03102cd7f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  applicableObject: {fileID: 8935185123628122631}
+  virtualName: Plateau
+  iconName: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  accurateUIPrefab: {fileID: 0}

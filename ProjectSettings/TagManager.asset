@@ -6,10 +6,7 @@ TagManager:
   tags:
   - Balise
   - Bat
-  - Arborescence
-  - Banc
-  - Plateau
-  - Bag
+  - Virtual Scene
   layers:
   - Default
   - TransparentFX

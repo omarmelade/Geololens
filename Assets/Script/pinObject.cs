@@ -68,6 +68,7 @@ public class pinObject : MonoBehaviour
             isPinned = true;
             GetComponent<BoxCollider>().enabled = false;
             refGO.GetComponent<pinnedObject>().Pin(this.gameObject);
+            refGO.GetComponent<VirtualObject>().AddChild(this.gameObject);
         }
         else
         {
@@ -79,6 +80,7 @@ public class pinObject : MonoBehaviour
     public void RemovePin()
     {
         refGO.GetComponent<pinnedObject>().UnPin(this.gameObject);
+        GetComponent<VirtualObject>().DeleteOnScene();
     }
 
 
