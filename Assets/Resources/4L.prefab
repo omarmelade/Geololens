@@ -339,6 +339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6453976767784025634}
+  - component: {fileID: 3774017977237629751}
   m_Layer: 0
   m_Name: 4L
   m_TagString: Bat
@@ -361,3 +362,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &3774017977237629751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093976793970686790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0c139bb62971c4693ef03102cd7f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applicableObject: {fileID: 6041066796460707638}
+  virtualName: "B\xE2timent IUT"
+  iconName: 
+  highlightColor: {r: 0.68462944, g: 0, b: 1, a: 1}
+  camera: {fileID: 0}
+  accurateUIPrefab: {fileID: 8519374817744116813, guid: 8393c4f14c8f5a14683c75d166a87150, type: 3}
