@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 374725852110594358}
   - component: {fileID: 3095068807351193919}
   - component: {fileID: -762715103596218364}
+  - component: {fileID: -2380167291112507110}
   m_Layer: 0
   m_Name: Balise
   m_TagString: Balise
@@ -93,6 +94,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7423617448387035078}
         m_TargetAssemblyTypeName: SetColor, Assembly-CSharp
         m_MethodName: SelectColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -2380167291112507110}
+        m_TargetAssemblyTypeName: SetLastObject, Assembly-CSharp
+        m_MethodName: setLastSelectedObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -248,11 +261,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0c139bb62971c4693ef03102cd7f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applicableObject: {fileID: 7743910938946067089}
   virtualName: Balise
   iconName: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  textArbo: {fileID: 0}
   accurateUIPrefab: {fileID: 8519374817744116813, guid: 8393c4f14c8f5a14683c75d166a87150, type: 3}
+--- !u!114 &-2380167291112507110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743910938946067089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7a6155b36938b44ad0c91bc6ae564c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8555296554854430839
 GameObject:
   m_ObjectHideFlags: 0

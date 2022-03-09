@@ -27,6 +27,11 @@ public class CreateObject : MonoBehaviour
         GameObject go = (GameObject) Instantiate(objet, camVect, Quaternion.identity);
         GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().AddVirtualChild(go.gameObject);
         GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().GetVirtualTreeText();
+        if (GameObject.FindGameObjectsWithTag("Arborescence").Length > 0)
+        {
+            GameObject.FindGameObjectsWithTag("Arborescence")[0].GetComponent<MenuDislay>().maj_arbo();
+        }
+
     }
 
     public void CreateNewObjectOnBalise()
