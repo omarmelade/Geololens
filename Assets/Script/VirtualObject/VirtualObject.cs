@@ -17,6 +17,8 @@ public class VirtualObject : MonoBehaviour
     protected bool highlighted = false;
     protected bool useGravity = false;
 
+    protected string textArbo = ""
+
     [SerializeField]
     protected Camera camera;
 
