@@ -5664,7 +5664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c231f856fe868694aa2484cbee50ef9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  children: []
 --- !u!4 &1001588657
 Transform:
   m_ObjectHideFlags: 0
@@ -47200,7 +47199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c655ebcbaeeae4da292943e20bf2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objet: {fileID: 6093976793970686790, guid: 06f8f210bb3350d44a3b8316bdaf8638, type: 3}
+  objet: {fileID: 4753334610211949566, guid: f30e278f11bdd7f49aaf5ffbc3b3b8a7, type: 3}
 --- !u!4 &7513197607886514954
 Transform:
   m_ObjectHideFlags: 0

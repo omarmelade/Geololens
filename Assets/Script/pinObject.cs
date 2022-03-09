@@ -7,7 +7,7 @@ public class pinObject : MonoBehaviour
     public bool isPinned = false;
     private Mesh mesh;
     private Vector3[] vertices;
-    private List<Vector3> corners;
+    private List<Vector3> corners = new List<Vector3>();
     private int shortestIndex;
     private GameObject refGO = null;
     public GameObject RefGO

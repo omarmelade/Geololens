@@ -64,7 +64,6 @@ public class MenuDislay : MonoBehaviour
                 text.text = s;
                 text.transform.parent = menu.transform;
                 text.transform.position = new Vector3(ArborescenceBalise.position.x, ArborescenceBalise.position.y + y, ArborescenceBalise.position.z);
-                Debug.Log(go.GetComponent<VirtualObject>().textArbo);
                 go.GetComponent<VirtualObject>().textArbo = text;
             }
         }
