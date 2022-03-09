@@ -5635,6 +5635,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1001588655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001588657}
+  - component: {fileID: 1001588656}
+  m_Layer: 0
+  m_Name: VirtualScene
+  m_TagString: Virtual Scene
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1001588656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001588655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c231f856fe868694aa2484cbee50ef9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  children: []
+--- !u!4 &1001588657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001588655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.10566549, y: -0.09077538, z: -0.0082}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1015301198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 316800718, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
@@ -40248,11 +40292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df161a1179ee66547b7b13eb5fc4b345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 303356388}
-  slider: {fileID: 3706114101972551260}
-  valX: {fileID: 6737685705662149788}
-  valY: {fileID: 6737685707408225472}
-  valZ: {fileID: 6737685706377228949}
 --- !u!23 &6737685705662149784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40808,11 +40847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3af9fcce77c3d44eb1323817c4226d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 303356388}
-  slider: {fileID: 3706114102553277448}
-  valX: {fileID: 6737685705839611291}
-  valY: {fileID: 6737685706054254261}
-  valZ: {fileID: 6737685706535410772}
 --- !u!222 &6737685706117333096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41364,11 +41398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3af9fcce77c3d44eb1323817c4226d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 303356388}
-  slider: {fileID: 3706114102255545380}
-  valX: {fileID: 6737685705839611291}
-  valY: {fileID: 6737685706054254261}
-  valZ: {fileID: 6737685706535410772}
 --- !u!23 &6737685706377228945
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42101,11 +42130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3af9fcce77c3d44eb1323817c4226d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 303356388}
-  slider: {fileID: 3706114100704613623}
-  valX: {fileID: 6737685705839611291}
-  valY: {fileID: 6737685706054254261}
-  valZ: {fileID: 6737685706535410772}
 --- !u!114 &6737685706931493209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42118,11 +42142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df161a1179ee66547b7b13eb5fc4b345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 303356388}
-  slider: {fileID: 3706114101639789935}
-  valX: {fileID: 6737685705662149788}
-  valY: {fileID: 6737685707408225472}
-  valZ: {fileID: 6737685706377228949}
 --- !u!23 &6737685707094903312
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42495,11 +42514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df161a1179ee66547b7b13eb5fc4b345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 303356388}
-  slider: {fileID: 3706114101181401546}
-  valX: {fileID: 6737685705662149788}
-  valY: {fileID: 6737685707408225472}
-  valZ: {fileID: 6737685706377228949}
 --- !u!1 &6737685707408225472
 GameObject:
   m_ObjectHideFlags: 0
