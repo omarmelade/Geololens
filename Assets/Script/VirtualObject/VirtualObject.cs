@@ -22,6 +22,8 @@ public class VirtualObject : MonoBehaviour
     protected bool highlighted = false;
     protected bool useGravity = false;
 
+    protected string textArbo = "";
+
     [SerializeField]
     protected GameObject accurateUIPrefab = null;
     protected GameObject accurateUI = null;
