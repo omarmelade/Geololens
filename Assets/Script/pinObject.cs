@@ -26,6 +26,7 @@ public class pinObject : MonoBehaviour
             rend = other.gameObject.GetComponent<Renderer>();
 
             corners = new List<Vector3>();
+            print("début");
 
             // get all corners
             for (int i = 0; i < vertices.Length; i++)
@@ -36,8 +37,12 @@ public class pinObject : MonoBehaviour
                     corners.Add(cornPos);
                 }
             }
+            print("milieu");
             
             // check the shortest dist 
+            if(corners.Count <= 0){
+                print("ya rien dans corners");
+            }
             float shortestDist = Vector3.Distance(corners[0], this.transform.position);
             shortestIndex = 0;
             for (int j = 0; j < corners.Count; j++)
@@ -49,6 +54,7 @@ public class pinObject : MonoBehaviour
                     shortestDist = dist;
                 }
             }
+            print("fin");
         }
     }
 
