@@ -44,6 +44,14 @@ public class VirtualObject : MonoBehaviour
         return strTree;
     }
 
+    public ArboRessource GetTree(){
+        ArboRessource ar = new ArboRessource(this.gameObject, new List<ArboRessource>());
+        foreach(GameObject child in children){
+            ar.AddChild(child.GetComponent<VirtualObject>().GetTree());
+        }
+        return ar;
+    }
+
     public void AddChild(GameObject child) {
         if(children.Contains(child)) {
             return;
