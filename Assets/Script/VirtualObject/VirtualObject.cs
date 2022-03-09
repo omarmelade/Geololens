@@ -6,8 +6,6 @@ public class VirtualObject : MonoBehaviour
 {
     // Arborescence
     protected GameObject parent = null;
-    [SerializeField]
-    protected GameObject applicableObject = null;
     protected List<GameObject> children = new List<GameObject>();
 
     [SerializeField]
@@ -29,24 +27,24 @@ public class VirtualObject : MonoBehaviour
     protected GameObject accurateUI = null;
 
     public void Start() {
-        if(applicableObject.GetComponent<Renderer>() != null) {
-            realMaterial = applicableObject.GetComponent<Renderer>().material;
+        if(GetComponent<Renderer>() != null) {
+            realMaterial = GetComponent<Renderer>().material;
         }
     }
     
-    public string GetTree(string indent){
+    public string GetTreeText(string indent){
         string strTree = indent + this.GetName() + " {";
         if(children.Count > 0){
             strTree += "\n";
         }
         foreach(GameObject child in children){
-            strTree += child.GetComponent<VirtualObject>().GetTree(indent+"\t") + "\n";
+            strTree += child.GetComponent<VirtualObject>().GetTreeText(indent+"\t") + "\n";
         }
         strTree += indent + "}";
         return strTree;
     }
 
-    public virtual void AddChild(GameObject child) {
+    public void AddChild(GameObject child) {
         if(children.Contains(child)) {
             return;
         }
@@ -54,8 +52,8 @@ public class VirtualObject : MonoBehaviour
             Debug.LogWarning("Cannot add a child that isn't a VirtualObject.");
             return;
         }
-        child.GetComponent<VirtualObject>().SetParent(applicableObject);
         children.Add(child);
+        child.GetComponent<VirtualObject>().SetParent(this.gameObject);
         this.OnAddChild(child);
     }
 
@@ -65,8 +63,19 @@ public class VirtualObject : MonoBehaviour
      */
     public virtual void OnAddChild(GameObject child) { }
 
-    public virtual void SetParent(GameObject parent){
+    public virtual void RemoveChild(GameObject child) {
+        children.Remove(child);
+        child.GetComponent<VirtualObject>().SetParent(null);
+    }
+
+    public void SetParent(GameObject parent){
+        if(this.parent != null){
+            this.parent.GetComponent<VirtualObject>().RemoveChild(this.gameObject);
+        } else {
+            GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().RemoveVirtualChild(this.gameObject);
+        }
         this.parent = parent;
+        parent.GetComponent<VirtualObject>().AddChild(this.gameObject);
         this.OnSetParent(parent);
     }
 
@@ -104,23 +113,24 @@ public class VirtualObject : MonoBehaviour
         foreach (GameObject child in children){
             child.GetComponent<VirtualObject>().DeleteOnScene();
         }
+        parent.GetComponent<VirtualObject>().RemoveChild(this.gameObject);
         Destroy(this);
     }
 
     public virtual void Highlight() {
-        if(applicableObject.GetComponent<Renderer>() == null) {
+        if(GetComponent<Renderer>() == null) {
             Debug.LogWarning("Cannot highlight a GameObject without renderer.");
         }
-        applicableObject.GetComponent<Renderer>().material.SetColor("_Color", highlightColor);
+        GetComponent<Renderer>().material.SetColor("_Color", highlightColor);
         this.highlighted = true;
     }
 
     public virtual void removeHighlight() {
-        if(applicableObject.GetComponent<Renderer>() == null) {
+        if(GetComponent<Renderer>() == null) {
             Debug.LogWarning("Cannot remove highlight on a GameObject without renderer.");
             return;
         }
-        applicableObject.GetComponent<Renderer>().material = realMaterial;
+        GetComponent<Renderer>().material = realMaterial;
         this.highlighted = false;
     }
 
@@ -131,7 +141,7 @@ public class VirtualObject : MonoBehaviour
     protected virtual void OnHighlightChanged() { }
 
     public void ApplyGravity() {
-        if(applicableObject.GetComponent<Rigidbody>() == null){
+        if(GetComponent<Rigidbody>() == null){
             Debug.LogWarning("Cannot apply gravity on GameObject without component Rigidbody");
             return;
         }
@@ -140,7 +150,7 @@ public class VirtualObject : MonoBehaviour
 
     public void RemoveGravity()
     {
-        if (applicableObject.GetComponent<Rigidbody>() == null)
+        if (GetComponent<Rigidbody>() == null)
         {
             Debug.LogWarning("Cannot remove gravity on GameObject without component Rigidbody");
             return;
@@ -153,8 +163,8 @@ public class VirtualObject : MonoBehaviour
      * Rewite me in children classes
      */
     protected virtual void OnApplyGravity() {
-        applicableObject.GetComponent<Rigidbody>().useGravity = true;
-        applicableObject.GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     /**
@@ -162,8 +172,8 @@ public class VirtualObject : MonoBehaviour
      */
     protected virtual void OnRemoveGravity()
     {
-        applicableObject.GetComponent<Rigidbody>().useGravity = false;
-        applicableObject.GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 
     /**
@@ -176,7 +186,7 @@ public class VirtualObject : MonoBehaviour
         }
         Vector3 camVect = new Vector3(Camera.current.transform.position.x, Camera.current.transform.position.y - (transform.localScale.y), Camera.current.transform.position.z + 0.8f);
         accurateUI = Instantiate(accurateUIPrefab,camVect,Quaternion.identity);
-        accurateUI.GetComponent<ObjectTarget>().SetTarget(gameObject);
+        accurateUI.GetComponent<ObjectTarget>().SetTarget(this.gameObject);
     }
 
     /**

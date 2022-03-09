@@ -19,13 +19,17 @@ public class VirtualObjectScene : MonoBehaviour
         Debug.LogWarning("GameObject added in VirtualObjectScene");
     }
 
-    public string GetVirtualTree(){
+    public void RemoveVirtualChild(GameObject go){
+        children.Remove(go);
+    }
+
+    public string GetVirtualTreeText(){
         string strTree = "Root {";
         if(children.Count > 0){
             strTree += "\n";
         }
         foreach(GameObject child in children){
-            strTree += child.GetComponent<VirtualObject>().GetTree("\t") + "\n";
+            strTree += child.GetComponent<VirtualObject>().GetTreeText("\t") + "\n";
         }
         strTree += "}";
         Debug.Log(strTree);
