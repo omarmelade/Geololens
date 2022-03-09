@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class VirtualObject : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class VirtualObject : MonoBehaviour
     protected bool highlighted = false;
     protected bool useGravity = false;
 
-    protected string textArbo = "";
+    public TextMeshPro textArbo = null;
 
     [SerializeField]
     protected Camera camera;
