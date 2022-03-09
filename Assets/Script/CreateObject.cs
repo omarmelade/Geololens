@@ -6,7 +6,7 @@ public class CreateObject : MonoBehaviour
 {
 
     public GameObject objet;
-    Camera camera = Camera.current;
+    Camera camera;
 
     public void CreateNewObject()
     {
