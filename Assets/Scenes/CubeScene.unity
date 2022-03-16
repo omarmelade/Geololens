@@ -3086,7 +3086,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 366851321}
@@ -4108,12 +4108,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shared:
     settings:
-      useDefaults: 1
+      useDefaults: 0
       Enabled: 1
       AutoMerge: 1
       AutoRefreeze: 1
-      AutoLoad: 1
-      AutoSave: 1
+      AutoLoad: 0
+      AutoSave: 0
     linkageSettings:
       useExisting: 0
       applyAdjustment: 1
@@ -4834,7 +4834,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 1908748698}
@@ -7877,7 +7877,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 688474509}
@@ -10490,7 +10490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &157378078433391641
 GameObject:
   m_ObjectHideFlags: 0
@@ -13522,7 +13522,7 @@ MonoBehaviour:
   startDimensionIndex: 1
   CanSelect: 1
   CanDeselect: 1
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 7389941544432922942}
@@ -14369,7 +14369,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 7249233787716835856}
@@ -17051,7 +17051,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 7842509114272971947}
@@ -18634,7 +18634,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 8909308523990466286}
@@ -26698,7 +26698,7 @@ MonoBehaviour:
   startDimensionIndex: 1
   CanSelect: 1
   CanDeselect: 1
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 5081617267793568652}
@@ -27237,7 +27237,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 4959196539770906581}
@@ -33205,7 +33205,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4140786306043936718}
         m_TargetAssemblyTypeName: SaveObjects, Assembly-CSharp
-        m_MethodName: LoadSave
+        m_MethodName: LoadWorldLock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34094,7 +34094,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 2585535381617218440}
@@ -38980,7 +38980,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 3808808128009465897}
@@ -42877,7 +42877,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 4459982151181878039}
@@ -44867,7 +44867,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6919920117100095180}
         m_TargetAssemblyTypeName: SaveObjects, Assembly-CSharp
-        m_MethodName: recup
+        m_MethodName: SaveWorldLock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44966,7 +44966,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 62844108699657105}
@@ -45243,7 +45243,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 13084185452182954}
@@ -45445,7 +45445,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 13084185098074482}
@@ -45647,7 +45647,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 13084184945579856}
@@ -47663,7 +47663,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 755156151361569313}
@@ -48327,7 +48327,7 @@ MonoBehaviour:
   startDimensionIndex: 1
   CanSelect: 1
   CanDeselect: 1
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 615821299237575028}
@@ -51822,7 +51822,7 @@ MonoBehaviour:
   startDimensionIndex: 1
   CanSelect: 1
   CanDeselect: 1
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 2286078699150251516}
@@ -52473,7 +52473,7 @@ MonoBehaviour:
   startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
-  VoiceCommand: 
+  voiceCommand: 
   voiceRequiresFocus: 1
   profiles:
   - Target: {fileID: 2138615401259237074}
