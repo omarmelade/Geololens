@@ -3360,9 +3360,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuDislay, Assembly-CSharp
-        m_MethodName: afficheMenu
+      - m_Target: {fileID: 485898129}
+        m_TargetAssemblyTypeName: GameObjectInteraction, Assembly-CSharp
+        m_MethodName: deleteObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5108,9 +5108,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuDislay, Assembly-CSharp
-        m_MethodName: afficheMenu
+      - m_Target: {fileID: 809040545}
+        m_TargetAssemblyTypeName: GameObjectInteraction, Assembly-CSharp
+        m_MethodName: toogleGravity
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8151,9 +8151,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuDislay, Assembly-CSharp
-        m_MethodName: afficheMenu
+      - m_Target: {fileID: 1577502328}
+        m_TargetAssemblyTypeName: GameObjectInteraction, Assembly-CSharp
+        m_MethodName: changeDimension
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

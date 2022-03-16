@@ -119,11 +119,17 @@ public class VirtualObject : MonoBehaviour
     }
 
     public virtual void DeleteOnScene() {
+        if (parent == null)
+        {
+            GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().RemoveVirtualChild(this.gameObject);
+        } else
+        {
+            parent.GetComponent<VirtualObject>().RemoveChild(this.gameObject);
+        }
         foreach (GameObject child in children){
             child.GetComponent<VirtualObject>().DeleteOnScene();
         }
-        parent.GetComponent<VirtualObject>().RemoveChild(this.gameObject);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public virtual void Highlight() {
@@ -185,6 +191,11 @@ public class VirtualObject : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
     }
 
+    public bool isUsingGravity()
+    {
+        return useGravity;
+    }
+
     /**
      * Rewrite me in children classes
      */ 
@@ -208,5 +219,10 @@ public class VirtualObject : MonoBehaviour
         }
         Destroy(accurateUI);
         accurateUI = null;
+    }
+
+    public bool isAccurateUI()
+    {
+        return (accurateUI != null);
     }
 }

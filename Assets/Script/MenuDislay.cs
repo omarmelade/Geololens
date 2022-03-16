@@ -19,12 +19,14 @@ public class MenuDislay : MonoBehaviour
 
     public void maj_arbo()
     {
+        int numberOfChild = 5;
         menu.transform.rotation = new Quaternion(0, 0, 0, 0);
         Debug.Log(menu.transform.childCount);
-        for (int i = menu.transform.childCount - 1; i >= 5; i--)
+        if (menu.transform.childCount > numberOfChild)
         {
             Debug.Log("Suppression");
-            Destroy(menu.transform.GetChild(i).gameObject);
+            Debug.Log(menu.transform.GetChild(numberOfChild).gameObject);
+            Destroy(menu.transform.GetChild(numberOfChild).gameObject);
         }
         Transform ArborescenceBalise = menu.transform.GetChild(4);
         string s = "";

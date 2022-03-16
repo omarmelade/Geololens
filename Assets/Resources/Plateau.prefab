@@ -17,12 +17,13 @@ GameObject:
   - component: {fileID: -3835301786910287014}
   - component: {fileID: -611999399799163951}
   - component: {fileID: -9005412384265881193}
-  - component: {fileID: 469029021198304456}
   - component: {fileID: 7162672077254639702}
   - component: {fileID: -7540971397934487126}
   - component: {fileID: 401813918382364549}
   - component: {fileID: 8399448511856910855}
   - component: {fileID: 7894586622413592413}
+  - component: {fileID: -1204338076206668933}
+  - component: {fileID: -9038368090872496202}
   m_Layer: 0
   m_Name: Plateau
   m_TagString: Plateau
@@ -218,19 +219,6 @@ MonoBehaviour:
   selected: 0
   minWidth: 0
   maxWidth: 0
---- !u!114 &469029021198304456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8935185123628122631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1cd4947f0a7d348bd736f6b79b03f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 0}
 --- !u!114 &7162672077254639702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +280,7 @@ MonoBehaviour:
   iconName: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   textArbo: {fileID: 0}
-  accurateUIPrefab: {fileID: 0}
+  accurateUIPrefab: {fileID: 8519374817744116813, guid: 8393c4f14c8f5a14683c75d166a87150, type: 3}
 --- !u!114 &7894586622413592413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,3 +293,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7a6155b36938b44ad0c91bc6ae564c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1204338076206668933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935185123628122631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c655ebcbaeeae4da292943e20bf2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 8935185123628122631}
+--- !u!114 &-9038368090872496202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935185123628122631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afd5316c63705643b3daba5a6e923bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTetherWhenManipulating: 0
+  IsBoundsHandles: 0
