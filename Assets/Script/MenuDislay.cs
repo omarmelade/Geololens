@@ -54,7 +54,7 @@ public class MenuDislay : MonoBehaviour
                 }
                 if (go.tag == "Bat")
                 {
-                    s = "- Quatrième ailes";
+                    s = "- Quatriï¿½me ailes";
                 }
                 if (go.tag == "Bag")
                 {
