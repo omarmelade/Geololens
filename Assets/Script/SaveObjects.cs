@@ -28,7 +28,8 @@ public struct Save
 public class SaveObjects : MonoBehaviour
 {
     // [SerializeField]
-    public WorldLockingManager LockingManager;
+    private WorldLockingManager worldLockingManager { get { return WorldLockingManager.GetInstance(); } }
+
     public void recup()
     {
         print("recup");
@@ -97,11 +98,13 @@ public class SaveObjects : MonoBehaviour
     }
 
     public void SaveWorldLock(){
-        LockingManager.Save();
+        print(worldLockingManager);
+        worldLockingManager.Save();
     }
 
     public void LoadWorldLock(){
-        LockingManager.Load();
+        print(worldLockingManager);
+        worldLockingManager.Load();
     }
 
 }
