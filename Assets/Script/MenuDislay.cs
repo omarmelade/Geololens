@@ -21,20 +21,21 @@ public class MenuDislay : MonoBehaviour
     {
         int numberOfChild = 5;
         menu.transform.rotation = new Quaternion(0, 0, 0, 0);
-        Debug.Log(menu.transform.childCount);
+
         for (int i = menu.transform.childCount; i > numberOfChild; i--)
         {
             Debug.Log("Suppression");
             Destroy(menu.transform.GetChild(i-1).gameObject);
         }
+
         Debug.Log(menu.transform.childCount);
-        Debug.Log("On recrée les objets");
+        Debug.Log("On recrÃ©er les objets");
         Transform ArborescenceBalise = menu.transform.GetChild(4);
         string s = "";
         float y = 0.0f;
         int nb_go = 0;
 
-        //Code de mise ? jour Arborescence
+        //Code de mise Ã  jour Arborescence
         List<ObjetScene> listeObjet = new List<ObjetScene>();
         Object[] GameobjectList = Resources.FindObjectsOfTypeAll(typeof(GameObject));
         foreach (GameObject go in GameobjectList)
@@ -55,12 +56,13 @@ public class MenuDislay : MonoBehaviour
                 }
                 if (go.tag == "Bat")
                 {
-                    s = "- Quatrième ailes";
+                    s = "- QuatriÃ¨me aile";
                 }
                 if (go.tag == "Bag")
                 {
                     s = "- Sac";
                 }
+                
                 nb_go++;
                 y = -0.015f * nb_go;
                 TextMeshPro text = Instantiate(ArborescenceBalise.GetComponent<TextMeshPro>(), menu.transform);

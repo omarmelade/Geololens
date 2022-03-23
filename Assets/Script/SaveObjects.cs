@@ -98,13 +98,13 @@ public class SaveObjects : MonoBehaviour
     }
 
     public void SaveWorldLock(){
-        print(worldLockingManager);
-        worldLockingManager.Save();
+        print(WorldLockingManager.GetInstance());
+        WorldLockingManager.GetInstance().Load();
     }
 
     public void LoadWorldLock(){
-        print(worldLockingManager);
-        worldLockingManager.Load();
+        print(WorldLockingManager.GetInstance());
+        WorldLockingManager.GetInstance().Load();
     }
 
 }
