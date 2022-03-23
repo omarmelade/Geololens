@@ -119,11 +119,17 @@ public class VirtualObject : MonoBehaviour
     }
 
     public virtual void DeleteOnScene() {
+        if (parent == null)
+        {
+            GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().RemoveVirtualChild(this.gameObject);
+        } else
+        {
+            parent.GetComponent<VirtualObject>().RemoveChild(this.gameObject);
+        }
         foreach (GameObject child in children){
             child.GetComponent<VirtualObject>().DeleteOnScene();
         }
-        parent.GetComponent<VirtualObject>().RemoveChild(this.gameObject);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public virtual void Highlight() {
@@ -172,8 +178,8 @@ public class VirtualObject : MonoBehaviour
      * Rewite me in children classes
      */
     protected virtual void OnApplyGravity() {
-        GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        useGravity = true;
     }
 
     /**
@@ -181,8 +187,13 @@ public class VirtualObject : MonoBehaviour
      */
     protected virtual void OnRemoveGravity()
     {
-        GetComponent<Rigidbody>().useGravity = false;
-        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        useGravity = false;
+    }
+
+    public bool isUsingGravity()
+    {
+        return useGravity;
     }
 
     /**
@@ -193,9 +204,12 @@ public class VirtualObject : MonoBehaviour
             Debug.LogWarning("You can't instantiate two AccurateUI.");
             return;
         }
-        Vector3 camVect = new Vector3(Camera.current.transform.position.x, Camera.current.transform.position.y - (transform.localScale.y), Camera.current.transform.position.z + 0.8f);
+        Debug.Log("Spawn UI");
+        Vector3 camVect = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - (transform.localScale.y), Camera.main.transform.position.z + 0.8f);
         accurateUI = Instantiate(accurateUIPrefab,camVect,Quaternion.identity);
+        Debug.Log(accurateUI.GetComponent<ObjectTarget>());
         accurateUI.GetComponent<ObjectTarget>().SetTarget(this.gameObject);
+        Debug.Log(accurateUI);
     }
 
     /**
@@ -208,5 +222,11 @@ public class VirtualObject : MonoBehaviour
         }
         Destroy(accurateUI);
         accurateUI = null;
+    }
+
+    public bool isAccurateUI()
+    {
+        Debug.Log(accurateUI);
+        return (accurateUI != null);
     }
 }

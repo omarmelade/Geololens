@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEditor;
+using Microsoft.MixedReality.WorldLocking.Core;
 
 [System.Serializable]
 public struct ObjetScene{
@@ -26,6 +27,9 @@ public struct Save
 
 public class SaveObjects : MonoBehaviour
 {
+    // [SerializeField]
+    private WorldLockingManager worldLockingManager { get { return WorldLockingManager.GetInstance(); } }
+
     public void recup()
     {
         print("recup");
@@ -92,4 +96,15 @@ public class SaveObjects : MonoBehaviour
             }
         }
     }
+
+    public void SaveWorldLock(){
+        print(worldLockingManager);
+        worldLockingManager.Save();
+    }
+
+    public void LoadWorldLock(){
+        print(worldLockingManager);
+        worldLockingManager.Load();
+    }
+
 }

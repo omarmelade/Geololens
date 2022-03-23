@@ -11,6 +11,7 @@ TagManager:
   - Bag
   - Banc
   - Plateau
+  - maj_arbo
   layers:
   - Default
   - TransparentFX
