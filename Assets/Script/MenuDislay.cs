@@ -10,7 +10,7 @@ public class MenuDislay : MonoBehaviour
 
     public void afficheMenu()
     {
-        if (menu.tag == "Arborescence")
+        if (menu.tag == "maj_arbo")
         {
             maj_arbo();
         }
@@ -22,12 +22,13 @@ public class MenuDislay : MonoBehaviour
         int numberOfChild = 5;
         menu.transform.rotation = new Quaternion(0, 0, 0, 0);
         Debug.Log(menu.transform.childCount);
-        if (menu.transform.childCount > numberOfChild)
+        for (int i = menu.transform.childCount; i > numberOfChild; i--)
         {
             Debug.Log("Suppression");
-            Debug.Log(menu.transform.GetChild(numberOfChild).gameObject);
-            Destroy(menu.transform.GetChild(numberOfChild).gameObject);
+            Destroy(menu.transform.GetChild(i-1).gameObject);
         }
+        Debug.Log(menu.transform.childCount);
+        Debug.Log("On recrée les objets");
         Transform ArborescenceBalise = menu.transform.GetChild(4);
         string s = "";
         float y = 0.0f;

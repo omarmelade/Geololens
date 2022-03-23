@@ -49,9 +49,7 @@ public class GameObjectInteraction : MonoBehaviour
 
     public void deleteObject()
     {
-        Debug.Log("DeleteObject");
         model = SetLastObject.lastSelected;
-        Debug.Log(model);
         if (model != null)
         {
             model.GetComponent<VirtualObject>().DeleteOnScene();
@@ -59,7 +57,6 @@ public class GameObjectInteraction : MonoBehaviour
             SetLastObject.lastSelected = null;
             if (GameObject.FindGameObjectsWithTag("Arborescence").Length > 0)
             {
-                Debug.Log("Jtai dit que j'etais dedans");
                 GameObject.FindGameObjectsWithTag("Arborescence")[0].GetComponent<MenuDislay>().maj_arbo();
             }
         }
@@ -75,10 +72,12 @@ public class GameObjectInteraction : MonoBehaviour
             Debug.Log(model.GetComponent<VirtualObject>().isAccurateUI());
             if (model.GetComponent<VirtualObject>().isAccurateUI())
             {
+                Debug.Log("On cache l'accurateUI");
                 model.GetComponent<VirtualObject>().HideAccurateUI();
             }
             else
             {
+                Debug.Log("On montre l'accurateUI");
                 model.GetComponent<VirtualObject>().ShowAccurateUI();
             }
         }
