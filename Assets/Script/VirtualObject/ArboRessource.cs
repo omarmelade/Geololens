@@ -23,4 +23,14 @@ public class ArboRessource
     public void AddChild(ArboRessource child){
         children.Add(child);
     }
+
+    public bool childvide()
+    {
+        return children.Count == 0;
+    }
+
+    public int childCount()
+    {
+        return children.Count;
+    }
 }

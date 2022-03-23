@@ -11,18 +11,18 @@ public class CreateObject : MonoBehaviour
     public void CreateNewObject()
     {
         camera = Camera.main;
-        Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y), camera.transform.position.z + 0.8f);
+        //Vector3 camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y), camera.transform.position.z + 0.8f);
+        Vector3 camVect;
         GameObject[] bat = GameObject.FindGameObjectsWithTag("Bat");
-
+        Vector3 camForward = Camera.current.transform.forward;
         // only one Bat can be instantiate
         if (objet.tag == "Bat" && bat.Length == 0)
         {
-            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y), camera.transform.position.z + 45f);
+            camVect = Camera.current.transform.position + new Vector3(Vector3.Dot(camForward,new Vector3(1f,0f,0f)),0f,Vector3.Dot(camForward,new Vector3(0f,0f,1f)))*45f;
         }
         else
         {
-            camVect = new Vector3(camera.transform.position.x, camera.transform.position.y - (objet.transform.localScale.y * 4), camera.transform.position.z + 0.8f);
-
+            camVect = Camera.current.transform.position + new Vector3(Vector3.Dot(camForward,new Vector3(1f,0f,0f)),0f,Vector3.Dot(camForward,new Vector3(0f,0f,1f)))*1.2f;
         }
         GameObject go = (GameObject) Instantiate(objet, camVect, Quaternion.identity);
         GameObject.FindGameObjectsWithTag("Virtual Scene")[0].GetComponent<VirtualObjectScene>().AddVirtualChild(go.gameObject);

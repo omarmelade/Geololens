@@ -69,6 +69,10 @@ public class pinObject : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             refGO.GetComponent<pinnedObject>().Pin(this.gameObject);
             refGO.GetComponent<VirtualObject>().AddChild(this.gameObject);
+            if (GameObject.FindGameObjectsWithTag("Arborescence").Length > 0)
+            {
+                GameObject.FindGameObjectsWithTag("Arborescence")[0].GetComponent<MenuDislay>().maj_arbo();
+            }
         }
         else
         {
