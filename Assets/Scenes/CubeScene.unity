@@ -1212,7 +1212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &464989305
 Transform:
   m_ObjectHideFlags: 0
@@ -8615,6 +8615,7 @@ GameObject:
   - component: {fileID: 341278416154205316}
   - component: {fileID: 4914877084781063341}
   - component: {fileID: 4914877084781063340}
+  - component: {fileID: 341278416154205319}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -8622,6 +8623,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &341278416154205319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341278416154205318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b31b6fc6b6a28249adae3628ec542ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solverHandler: {fileID: 341278416154205315}
 --- !u!4 &341278416272517643
 Transform:
   m_ObjectHideFlags: 0
