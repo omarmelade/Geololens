@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/CubeScene.unity
     guid: 876dcd5c878af564198fde76a45dff79
   - enabled: 0
-    path: Assets/Samples/WLT Samples/1.5.8/WLT Examples/Scenes/WorldLockedPhysicsSample.unity
-    guid: 77340a89908d678449b51949f87784a9
+    path: Assets/Samples/Mixed Reality Toolkit Examples/2.7.3/Demos - HandTracking/Scenes/HandMenuExamples.unity
+    guid: 2792ec9767804e644906ab978f2eed23
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: cd99671f2fc74db46bbb88f711ad060f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f9c25a918654bf8439c259000d431656, type: 2}
