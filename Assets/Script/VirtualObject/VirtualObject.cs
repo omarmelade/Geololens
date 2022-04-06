@@ -205,7 +205,7 @@ public class VirtualObject : MonoBehaviour
             return;
         }
         Debug.Log("Spawn UI");
-        Vector3 camVect = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - (transform.localScale.y), Camera.main.transform.position.z + 0.8f);
+        Vector3 camVect = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z + 0.8f);
         accurateUI = Instantiate(accurateUIPrefab,camVect,Quaternion.identity);
         Debug.Log(accurateUI.GetComponent<ObjectTarget>());
         accurateUI.GetComponent<ObjectTarget>().SetTarget(this.gameObject);
