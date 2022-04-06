@@ -54,6 +54,10 @@ public class pinObject : MonoBehaviour
                     shortestDist = dist;
                 }
             }
+            for(int i = 0; i < this.transform.childCount; i++)
+            {
+                this.transform.GetChild(i).gameObject.GetComponent<Renderer>().material.color = Color.red;
+            }
             print("fin");
         }
     }
