@@ -18,7 +18,7 @@ public class CreateObject : MonoBehaviour
         // only one Bat can be instantiate
         if (objet.tag == "Bat" && bat.Length == 0)
         {
-            camVect = Camera.current.transform.position + new Vector3(Vector3.Dot(camForward,new Vector3(1f,0f,0f)),0f,Vector3.Dot(camForward,new Vector3(0f,0f,1f)))*45f;
+            camVect = Camera.current.transform.position + new Vector3(Vector3.Dot(camForward,new Vector3(1f,0f,0f)),0f,Vector3.Dot(camForward,new Vector3(0f,0f,1f)))* 45f;
         }
         else
         {

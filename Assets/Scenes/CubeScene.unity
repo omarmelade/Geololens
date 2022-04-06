@@ -511,7 +511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &303356389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6636,7 +6636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &157378078433391641
 GameObject:
   m_ObjectHideFlags: 0
@@ -8635,7 +8635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b31b6fc6b6a28249adae3628ec542ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solverHandler: {fileID: 341278416154205315}
 --- !u!4 &341278416272517643
 Transform:
   m_ObjectHideFlags: 0
