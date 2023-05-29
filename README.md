@@ -1,4 +1,6 @@
-# HololensUnityTest
+# GeoloLens
+
+Projet utilisant les Microsoft HoloLens pour créer un outil d’aide géomètre en réalité augmentée permettant de prévisualiser l’emplacement d’un bâtiment et d’étudier les les taux de rendements de panneaux solaires en fonction des bâtiments alentours.
  
 ## Installation instructions 
 
